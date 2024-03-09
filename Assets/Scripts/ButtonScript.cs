@@ -26,5 +26,4 @@ public class ButtonScript : MonoBehaviour
     {
         button.gameObject.SetActive(false);
     }
-
 }
