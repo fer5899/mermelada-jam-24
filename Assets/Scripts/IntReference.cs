@@ -7,12 +7,14 @@ using Mono.Cecil.Cil;
 [Serializable]
 public class IntReference
 {
-    public bool useConstant = true;
-    public int constantValue;
-
-    public IntVariableSO variable;
-
-    public int multiplier = 1;
+    [SerializeField]
+    private bool useConstant = true;
+    [SerializeField]
+    private int constantValue;
+    [SerializeField]
+    private IntVariableSO variable;
+    [SerializeField]
+    private int multiplier = 1;
 
     public int value
     {
