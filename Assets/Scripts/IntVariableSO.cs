@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements.Experimental;
 
 [CreateAssetMenu(fileName = "IntVariable", menuName = "IntVariable")]
 public class IntVariableSO : ScriptableObject
 {
-    public int value;
-    public int defaultValue;
+    [SerializeField]
+    private int value;
+
+    [SerializeField]
+    private int defaultValue;
 
     [System.NonSerialized]
     public UnityEvent<int> OnValueChanged;
@@ -33,5 +37,15 @@ public class IntVariableSO : ScriptableObject
     public void ResetValue()
     {
         value = defaultValue;
+    }
+
+    public int Value
+    {
+        get {return value;}
+    }
+
+    public int DefaultValue
+    {
+        get {return defaultValue;}
     }
 }

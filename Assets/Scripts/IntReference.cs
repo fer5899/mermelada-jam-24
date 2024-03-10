@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Mono.Cecil.Cil;
 
 [Serializable]
 public class IntReference
@@ -15,6 +16,11 @@ public class IntReference
 
     public int value
     {
-        get { return useConstant ? constantValue : variable.value * multiplier; }
+        get { return useConstant ? constantValue : variable.Value * multiplier; }
+    }
+
+    public int defaultValue
+    {
+        get { return variable.DefaultValue; }
     }
 }
