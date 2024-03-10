@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonScript : MonoBehaviour
+public class AttackButton : MonoBehaviour
 {
     public Button button;
-    public GameObject panel;
+    public IntVariableSO manaData;
 
     void Start()
     {
@@ -15,13 +15,15 @@ public class ButtonScript : MonoBehaviour
 
     void Update()
     {
-        
+        if (manaData.Value <= 0)
+            button.interactable = false;
+        else
+            button.interactable = true;
     }
 
     public void OnButtonClick()
     {
         Debug.Log("El boton " + button.name + " ha sido clicado");
-        panel.SetActive(true);
     }
 
     public void DeactivateObject()
