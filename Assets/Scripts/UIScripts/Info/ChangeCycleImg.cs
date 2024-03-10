@@ -11,6 +11,6 @@ public class ChangeCycleImg : MonoBehaviour
     void Update()
     {
         if (cycleData.cycle > 0)
-            cycleText.text = cycleData.cycle.ToString();
+            cycleText.text = cycleData.cycle.ToString() + 1;
     }
 }

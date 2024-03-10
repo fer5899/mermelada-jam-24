@@ -6,9 +6,10 @@ public class TableController : Singleton<TableController>
 {
     public GameManagerSO gameManager;
     public int maxHandSize = 4;
-    public CardSO[] drawDeck;
+    public CardSO[] drawPile;
     public CardSO[] hand;
-    public CardSO[] discardDeck;
+    public CardSO[] discardPile;
+    public IntVariableSO discardPileSize, drawPileSize;
 
     public void OnEnable()
     {
@@ -44,5 +45,11 @@ public class TableController : Singleton<TableController>
     public void EndTurn(int turn)
     {
         Debug.Log("Turn " + turn + " ended");
+    }
+
+    void Update ()
+    {
+        drawPileSize.SetValue(drawPile.Length);
+        discardPileSize.SetValue(discardPile.Length);
     }
 }
