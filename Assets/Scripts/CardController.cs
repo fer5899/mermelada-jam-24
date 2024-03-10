@@ -21,15 +21,17 @@ public class CardController : MonoBehaviour
         mana.text = cardData.cost.ToString();
         if (cardData.cardImage)
             image = cardData.cardImage;
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.localScale = new Vector3( 1, 1, 1);
     }
 
     public void PlayCard()
     {
         // Add to discard pile
-        TableController.Instance.AddToDiscardPile(cardData);
+/*         TableController.Instance.AddToDiscardPile(cardData);
 
-        Debug.Log("Card played: " + cardData.name);
+        Debug.Log("Card played: " + cardData.name); */
+        Debug.Log("Hola desde PlayCArd en CardController. carta.name: " + cardData.cardName);
+
 
         // Execute all card actions
         // foreach (CardAction action in cardData.cardActions)
@@ -76,6 +78,7 @@ public class CardController : MonoBehaviour
 
     public void DeactivateObject()
     {
+        TableController.Instance.AddToDiscardPile(cardData);
         gameObject.SetActive(false);
     }
 

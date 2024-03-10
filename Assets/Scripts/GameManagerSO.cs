@@ -51,5 +51,10 @@ public class GameManagerSO : ScriptableObject
         turn++;
     }
 
+    void Start()
+    { 
+        cycle = 0;
+        turn = 0;
+    }
 
 }

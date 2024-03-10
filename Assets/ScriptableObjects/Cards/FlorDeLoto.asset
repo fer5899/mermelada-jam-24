@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlorDeLoto
   m_EditorClassIdentifier: 
   cardName: Flor de loto
-  cardDescription: 
+  cardDescription: lalalalal
   cardImage: {fileID: 0}
   cost: 0
   cardActions:

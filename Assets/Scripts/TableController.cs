@@ -10,9 +10,9 @@ public class TableController : Singleton<TableController>
 {
     public GameManagerSO gameManager;
     public int maxHandSize = 4;
-    public CardSO[] drawPile;
+    private List<CardSO> drawPile;
     public GameObject[] hand;
-    public CardSO[] discardPile;
+    public List<CardSO> discardPile;
     public IntVariableSO discardPileSize, drawPileSize;
 
     public void OnEnable()
@@ -44,55 +44,60 @@ public class TableController : Singleton<TableController>
     public void StartTurn(int turn)
     {
         Debug.Log("Turn " + turn + " started");
+        DrawCard();
     }
 
     public void EndTurn(int turn)
     {
         Debug.Log("Turn " + turn + " ended");
+        StartTurn(turn);
     }
 
     void Update ()
     {
-        drawPileSize.SetValue(drawPile.Length);
-        discardPileSize.SetValue(discardPile.Length);
+        drawPileSize.SetValue(drawPile.Count);
+        discardPileSize.SetValue(discardPile.Count);
     }
 
     public void DrawCard()
     {
 
-        foreach (GameObject card in hand)
-        {
-            // Iteramos por las cartas
-            if (!card.activeSelf)
-            {
-                Debug.Log("ESTOY INACTIVO Y ROBO");
-                string tmp = drawPile[0].cardName;
-                RemoveFirstElement();
-            }
+        // Iteramos por las cartas
+            // En caso de que no haya cartas para robar ejecutamos la función ShuffleDeck
             // En la primera inactiva
-                // En caso de que no haya cartas para robar ejecutamos la función ShuffleDeck
                 // Obtenemos los datos de la carta a robar y la guardamos en una variable temporal
                 // Quitamos la carta obtenida de la pila de robo
-                // Activamos la carta
                 // Cogemos el CardController de la carta y llamamos a LoadData con la card data robada.
+        if (drawPile.Count <= 0)
+            {
+                Debug.Log("PILA DE ROBO VACIA");
+                MoveCards();
+            }
+        foreach (GameObject card in hand)
+        {
+            
+            Debug.Log("drawPileSize.Value " + drawPileSize.Value + "count " + drawPile.Count);
+
+            if (!card.activeSelf)
+            {
+                CardSO drawnCard = drawPile[0];
+                Debug.Log("drawnCard: " + drawnCard.cardName);
+                drawPile.Remove(drawnCard);
+                card.SetActive(true);
+                CardController loadCard = card.GetComponent<CardController>();
+                loadCard.cardData = drawnCard;
+                loadCard.LoadData(drawnCard);
+            }
         }
     }
 
-    public void RemoveFirstElement()
+    public void MoveCards()
     {
-        if (drawPile.Length > 1)
-        {
-            CardSO[] newDrawPile = new CardSO[drawPileSize.Value - 1];
-            Array.Copy(drawPile, 1, newDrawPile, 0, drawPile.Length - 1);
-            drawPile = newDrawPile;
-        }
-        else
-        {
-            Debug.Log("PILA DE ROBO INACTIVA");
-            drawPile = null;
-        }
+        for (int i = 0; i < discardPile.Count; i++)
+            drawPile.Add(discardPile[i]);
+        discardPile.Clear();
+        Debug.Log("discardDeck: " + discardPile.Count);
     }
-
     public void ShuffleDeck()
     {
 
@@ -100,8 +105,8 @@ public class TableController : Singleton<TableController>
 
     public void AddToDiscardPile(CardSO card)
     {
-        // Añades el card data a discard pile
-
+        discardPile.Add(card);
+        Debug.Log("primer nodo lista descarte: " + discardPile[0].cardName);
     }
 
     public void DiscardCard(GameObject card)
@@ -114,18 +119,19 @@ public class TableController : Singleton<TableController>
 
     }
 
-    public void CopyDeck()
+    public void LoadHand()
     {
-        for (int i = 0; i < 4; i++)
+        drawPile = new List<CardSO>();
+
+        for (int i = 0; i < gameManager.playerDeck.Length; i++)
         {
-            TextMeshProUGUI text = hand[i].GetComponentInChildren<TextMeshProUGUI>();
-            text.text = gameManager.playerDeck[i].cardName;
+            drawPile.Add(gameManager.playerDeck[i]);
         }
     }
 
     void Start()
     {
-        CopyDeck();
-        DrawCard();
+        LoadHand();
+        StartTurn(gameManager.turn);
     }
 }

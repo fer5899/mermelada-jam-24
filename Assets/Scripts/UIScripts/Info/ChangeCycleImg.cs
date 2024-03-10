@@ -10,7 +10,7 @@ public class ChangeCycleImg : MonoBehaviour
     public GameManagerSO cycleData;
     void Update()
     {
-        if (cycleData.cycle > 0)
-            cycleText.text = cycleData.cycle.ToString() + 1;
+        int cycleDisplay = cycleData.cycle + 1;
+        cycleText.text = cycleDisplay.ToString();
     }
 }
