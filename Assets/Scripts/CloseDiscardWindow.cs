@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonScript : MonoBehaviour
+public class CloseDiscardWindow : MonoBehaviour
 {
     public Button button;
     public GameObject panel;
@@ -13,19 +13,9 @@ public class ButtonScript : MonoBehaviour
         button.onClick.AddListener(OnButtonClick);
     }
 
-    void Update()
-    {
-        
-    }
-
     public void OnButtonClick()
     {
-        Debug.Log("El boton " + button.name + " ha sido clicado");
-        panel.SetActive(true);
+        panel.SetActive(false);
     }
 
-    public void DeactivateObject()
-    {
-        button.gameObject.SetActive(false);
-    }
 }
