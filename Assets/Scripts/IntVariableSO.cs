@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements.Experimental;
 
-[CreateAssetMenu(fileName = "IntVariable", menuName = "IntVariable")]
+[CreateAssetMenu(fileName = "IntVariable", menuName = "IntVariable", order = 10)]
 public class IntVariableSO : ScriptableObject
 {
     [SerializeField]
@@ -28,7 +28,7 @@ public class IntVariableSO : ScriptableObject
         OnValueChanged.Invoke(value);
     }
 
-    public void ChangeValue(int amount)
+    public void AddAmount(int amount)
     {
         value += amount;
         OnValueChanged.Invoke(value);

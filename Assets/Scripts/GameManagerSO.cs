@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "GameManager", menuName = "Managers/GameManager")]
 public class GameManagerSO : ScriptableObject
 {
     public int cycle = 0;
