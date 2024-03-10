@@ -5,7 +5,7 @@ using System;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
+[CreateAssetMenu(fileName = "New Card", menuName = "Card", order = 0)]
 public class CardSO : ScriptableObject
 {
     [Header("UI data")]
@@ -14,6 +14,6 @@ public class CardSO : ScriptableObject
     public Image cardImage;
     public int cost;
 
-    // Actions array of CardActionSO
+    public List<CardAction> cardActions;
 
 }

@@ -19,26 +19,26 @@ public class BossController : Singleton<BossController>
 
     public void TakeDamage(int damage)
     {
-        bossHealth.ChangeValue(-damage);
+        bossHealth.AddAmount(-damage);
     }
 
     public void Heal(int amount)
     {
-        bossHealth.ChangeValue(amount);
+        bossHealth.AddAmount(amount);
     }
 
     public void GainBleed(int bleed)
     {
-        bossBleed.ChangeValue(bleed);
+        bossBleed.AddAmount(bleed);
     }
 
     public void GainWeak(int weak)
     {
-        bossWeak.ChangeValue(weak);
+        bossWeak.AddAmount(weak);
     }
 
     public void GainPoison(int poison)
     {
-        bossPoison.ChangeValue(poison);
+        bossPoison.AddAmount(poison);
     }
 }
