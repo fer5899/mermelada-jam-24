@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   cycle: 0
-  OnCycleEnd:
-    m_PersistentCalls:
-      m_Calls: []
+  turn: 1
+  playerDeck: []

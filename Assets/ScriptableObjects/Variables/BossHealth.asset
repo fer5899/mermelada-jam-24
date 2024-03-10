@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1cb146ca3356a41847da890afab8e0, type: 3}
   m_Name: BossHealth
   m_EditorClassIdentifier: 
-  value: 0
-  defaultValue: 0
-  OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
+  value: 200
+  defaultValue: 200

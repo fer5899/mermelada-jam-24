@@ -7,7 +7,7 @@ using TMPro;
 public class DrawCard : MonoBehaviour
 {
     public Button b1, b2, b3, b4;
-    public Animator respawnTrig;
+    //public Animator respawnTrig;
 
     void Start()
     {
