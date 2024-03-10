@@ -53,5 +53,5 @@
     },
     "dotnet.preferCSharpExtension": true,
     "mermeladaJam.slndotnet.defaultSolution": "mermelada_jam.sln",
-    "dotnet.defaultSolution": "mermelada_jam.sln"
+    "dotnet.defaultSolution": "mermeladaJam.sln"
 }

@@ -29,6 +29,8 @@ public class CardController : MonoBehaviour
         // Add to discard pile
         TableController.Instance.AddToDiscardPile(cardData);
 
+        Debug.Log("Card played: " + cardData.name);
+
         // Execute all card actions
         // foreach (CardAction action in cardData.cardActions)
         // {
@@ -68,8 +70,13 @@ public class CardController : MonoBehaviour
         // }
 
         // Deactivate card
-        TableController.Instance.DeactivateObject(gameObject);
+        DeactivateObject();
 
+    }
+
+    public void DeactivateObject()
+    {
+        gameObject.SetActive(false);
     }
 
     // public void DealDamage(CardAction action)
