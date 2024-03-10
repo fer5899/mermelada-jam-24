@@ -10,6 +10,7 @@ public class CardLoader : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI description;
     public TextMeshProUGUI mana;
+
     public void LoadCard(CardSO cardData)
     {
         nameText.text = cardData.cardName;
@@ -18,4 +19,5 @@ public class CardLoader : MonoBehaviour
         if (cardData.cardImage)
             image = cardData.cardImage;
     }
+    
 }
