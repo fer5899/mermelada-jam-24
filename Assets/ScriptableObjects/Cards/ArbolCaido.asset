@@ -10,24 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
-  m_Name: Inercia
+  m_Name: ArbolCaido
   m_EditorClassIdentifier: 
-  cardName: Inercia
-  cardDescription: "Haz 5 de da\xF1o. Repite tantas veces como furia poseas."
+  cardName: "\xC1rbol ca\xEDdo"
+  cardDescription: "Haz 20 de da\xF1o. 40 si el rival est\xE1 debilitado."
   cardImage: {fileID: 0}
-  cost: 1
+  cost: 3
   cardActions:
   - actionType: 0
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 4
+      constantValue: 20
       variable: {fileID: 0}
       multiplier: 0
     repetition:
       useConstant: 0
       constantValue: 0
-      variable: {fileID: 11400000, guid: 799f689a7f581c448895e2a62bded8ee, type: 2}
-      multiplier: 1
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 0}
+  - actionType: 0
+    executeIfStatusActive: {fileID: 11400000, guid: 3b9c8b9e410f3e54ba8cebb601fd4e9e, type: 2}
+    amount:
+      useConstant: 1
+      constantValue: 20
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}

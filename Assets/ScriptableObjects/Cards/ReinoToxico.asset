@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ReinoToxico
   m_EditorClassIdentifier: 
   cardName: "Reino T\xF3xico"
-  cardDescription: 
+  cardDescription: Triplica el veneno.
   cardImage: {fileID: 0}
   cost: 0
   cardActions:
