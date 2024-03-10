@@ -10,6 +10,7 @@ public class PlayerController : Singleton<PlayerController>
     public IntVariableSO playerFury;
     public IntVariableSO playerThorns;
     public IntVariableSO playerWeak;
+    public IntVariableSO playerFutureMana;
 
 
     public void Start()
@@ -20,40 +21,46 @@ public class PlayerController : Singleton<PlayerController>
         playerFury.ResetValue();
         playerThorns.ResetValue();
         playerWeak.ResetValue();
+        playerFutureMana.ResetValue();
     }
 
     public void TakeDamage(int damage)
     {
-        playerHealth.ChangeValue(-damage);
+        playerHealth.AddAmount(-damage);
     }
 
     public void UseMana(int mana)
     {
-        playerMana.ChangeValue(-mana);
+        playerMana.AddAmount(-mana);
     }
 
     public void GainMana(int mana)
     {
-        playerMana.ChangeValue(mana);
+        playerMana.AddAmount(mana);
     }
 
     public void Heal(int health)
     {
-        playerHealth.ChangeValue(health);
+        playerHealth.AddAmount(health);
     }
 
     public void GainBlock(int block)
     {
-        playerBlock.ChangeValue(block);
+        playerBlock.AddAmount(block);
     }
 
     public void GainFury(int fury)
     {
-        playerFury.ChangeValue(fury);
+        playerFury.AddAmount(fury);
     }
 
     public void GainThorns(int thorns)
     {
-        playerThorns.ChangeValue(thorns);
+        playerThorns.AddAmount(thorns);
+    }
+
+    public void GainFutureMana(int futureMana)
+    {
+        playerFutureMana.AddAmount(futureMana);
     }
 }
