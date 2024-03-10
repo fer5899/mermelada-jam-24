@@ -7,6 +7,9 @@ using UnityEngine.Events;
 public class UpgradeManager : Singleton<UpgradeManager>
 {
     public CardSO[] upgradeProgression;
+    public GameManagerSO gameManager;
+    public CardLoader[] upgradeCardLoaders;
+    public int upgradeCycleStart;
 
 
     [System.NonSerialized]
@@ -24,6 +27,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public void StartUpgrade()
     {
         OnUpgradeStart.Invoke();
+
     }
 
     public void EndUpgrade()
