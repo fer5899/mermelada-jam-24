@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Adversidad
   cardDescription: "Aplica 1 de sangrado y 1 de debilidad. Si est\xE1s debilitado,
     aplica 2 de veneno."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: ad732fde3d34de84892d3ff85dc7d245, type: 3}
   cost: 0
   cardActions:
   - actionType: 6

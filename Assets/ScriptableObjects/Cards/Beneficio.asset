@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Beneficio
   cardDescription: "Bloquea 2 de da\xF1o. Haz 6 de da\xF1o. Recupera 6PS. "
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 159dd8d9cb823064d969bae8854c6092, type: 3}
   cost: 2
   cardActions:
   - actionType: 2

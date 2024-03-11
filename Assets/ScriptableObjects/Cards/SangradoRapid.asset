@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Sangrado r\xE1pido"
   cardDescription: "Bloquea 7 de da\xF1o. Aplica 2 de sangrado."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: ba778250527810c4cb762338a02d9bb9, type: 3}
   cost: 2
   cardActions:
   - actionType: 2

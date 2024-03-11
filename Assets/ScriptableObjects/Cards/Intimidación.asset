@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Intimidaci\xF3n"
   cardDescription: Aplica 3 de debilidad.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 6ac5c517138021c409d0cff909996576, type: 3}
   cost: 0
   cardActions:
   - actionType: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Lugar seguro
   cardDescription: "Recuperas 6HP. El siguiente turno tienes 1 punto de man\xE1 extra."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: bec419c1c529d1b4bb60992b955169d5, type: 3}
   cost: 2
   cardActions:
   - actionType: 1

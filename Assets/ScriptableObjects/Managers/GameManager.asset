@@ -15,11 +15,7 @@ MonoBehaviour:
   cycle: 0
   turn: 26
   playerDeck:
-  - {fileID: 11400000, guid: b684747e9ce72f644914c27ab807a850, type: 2}
-  - {fileID: 11400000, guid: d32e07893d10c224ba3716a727a08f2c, type: 2}
-  - {fileID: 11400000, guid: f307f58235da8d3409f69558214a04bd, type: 2}
-  - {fileID: 11400000, guid: 15e531e819bf2ca4398dc30a39221870, type: 2}
-  - {fileID: 11400000, guid: 65dcf2665ba9f8644b06246b015964ad, type: 2}
-  - {fileID: 11400000, guid: 83ae24620367de24d91fc8c7beae3124, type: 2}
-  - {fileID: 11400000, guid: 5a3b9c9321dfbb343871f5024d554012, type: 2}
-  - {fileID: 11400000, guid: 0d27293f4a294dc419f97e889a4fef5a, type: 2}
+  - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
+  - {fileID: 11400000, guid: 3acfb86e74b30814eb18767b4e7aa655, type: 2}
+  - {fileID: 11400000, guid: 6c1fd7c10ddc05243aef9aa827b5c21f, type: 2}
+  - {fileID: 11400000, guid: 5195318af3d0d1241955270958edd0ef, type: 2}
