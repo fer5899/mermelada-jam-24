@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
-  m_Name: Recuperar
+  m_Name: Usurero
   m_EditorClassIdentifier: 
   cardName: Usurero
   cardDescription: Aplica 2 de veneno. Roba una carta al azar.
-  cardImage: {fileID: 0}
-  cost: 0
+  cardImage: {fileID: 21300000, guid: 6908bb4b3a5bd1f4ba7ee289cbf3df98, type: 3}
+  cost: 2
   cardActions:
   - actionType: 6
     executeIfStatusActive: {fileID: 0}
