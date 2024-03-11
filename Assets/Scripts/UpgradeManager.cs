@@ -16,6 +16,17 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public CardSO[] upgradeProgression;
     public CardLoader[] upgradeCardLoaders;
 
+    private CardSO selectedUpgradeCard;
+    private CardSO selectedDeckCard;
+
+    public GameObject continueButton;
+
+
+    public void Start()
+    {
+        gameManager.StartUpgrade();
+    }
+
     public void OnEnable()
     {
         gameManager.OnUpgradeStart.AddListener(StartUpgrade);
@@ -32,7 +43,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
     {
         getRewardCards();
         getHandOfPlayer();
-        gameManager.EndUpgrade();
     }
 
     private void getHandOfPlayer()
@@ -103,6 +113,50 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public void EndUpgrade()
     {
         gameManager.EndCycle();    
+    }
+
+    public void SetAllDeckAsDeselected()
+    {
+        for (int i = 0; i < organizer.transform.childCount; i++)
+        {
+            organizer.transform.GetChild(i).GetComponent<CardLoader>().SetCardAsDeselected();
+        }
+    }
+
+    public void SetAllUpgradeAsDeselected()
+    {
+        for (int i = 0; i < upgradeCardLoaders.Length; i++)
+        {
+            upgradeCardLoaders[i].SetCardAsDeselected();
+        }
+    }
+
+    public void SetSelectedUpgradeCard(CardSO card)
+    {
+        selectedUpgradeCard = card;
+    }
+
+    public void SetSelectedDeckCard(CardSO card)
+    {
+        selectedDeckCard = card;
+    }
+
+    public void Update()
+    {
+        if (selectedDeckCard != null && selectedUpgradeCard != null)
+        {
+            continueButton.SetActive(true);
+        }
+        else
+        {
+            continueButton.SetActive(false);
+        }
+    }
+
+    public void UpgradeCard()
+    {
+        gameManager.playerDeck[Array.IndexOf(gameManager.playerDeck, selectedDeckCard)] = selectedUpgradeCard;
+        // gameManager.EndUpgrade();
     }
 
 }
