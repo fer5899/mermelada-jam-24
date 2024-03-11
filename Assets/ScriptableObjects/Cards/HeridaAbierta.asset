@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HeridaAbierta
   m_EditorClassIdentifier: 
   cardName: Herida Abierta
-  cardDescription: 
+  cardDescription: "Haz 12 de da\xF1o. 20 si el rival est\xE1 sangrando."
   cardImage: {fileID: 0}
-  cost: 0
+  cost: 2
   cardActions:
   - actionType: 0
     executeIfStatusActive: {fileID: 0}

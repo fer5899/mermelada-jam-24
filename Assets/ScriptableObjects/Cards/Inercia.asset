@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Inercia
   m_EditorClassIdentifier: 
   cardName: Inercia
-  cardDescription: 
+  cardDescription: "Haz 5 de da\xF1o. Repite tantas veces como furia poseas."
   cardImage: {fileID: 0}
-  cost: 0
+  cost: 1
   cardActions:
   - actionType: 0
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 4
       variable: {fileID: 0}
       multiplier: 0
     repetition:

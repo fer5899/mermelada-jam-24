@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
+  m_Name: AtaqueInfecto
+  m_EditorClassIdentifier: 
+  cardName: Ataque Infecto
+  cardDescription: "Haz 6 de da\xF1o. 10 si el enemigo est\xE1 envenenado."
+  cardImage: {fileID: 0}
+  cost: 1
+  cardActions:
+  - actionType: 0
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 6
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 0}
+  - actionType: 0
+    executeIfStatusActive: {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}
+    amount:
+      useConstant: 1
+      constantValue: 4
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 0}

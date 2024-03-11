@@ -27,10 +27,9 @@ public class CardController : MonoBehaviour
     public void PlayCard()
     {
         // Add to discard pile
-/*         TableController.Instance.AddToDiscardPile(cardData);
+        //TableController.Instance.AddToDiscardPile(cardData);
 
-        Debug.Log("Card played: " + cardData.name); */
-        Debug.Log("Hola desde PlayCArd en CardController. carta.name: " + cardData.cardName);
+        Debug.Log("Card played: " + cardData.name);
 
 
         // Execute all card actions
