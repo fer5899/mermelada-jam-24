@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: "Lluvia t\xF3xica"
   cardDescription: "Aplica 3 de veneno. Repite tantas veces como puntos de man\xE1
     tengas."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 69b65c46a1a6d064cb0b7fd6af1657dd, type: 3}
   cost: 0
   cardActions:
   - actionType: 6

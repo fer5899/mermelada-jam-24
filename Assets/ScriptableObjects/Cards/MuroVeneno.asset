@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Muro veneno
   cardDescription: "Bloquea 7 de da\xF1o. Aplica 3 de veneno."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: aa0a6b044fdd0134abb487c4589b7fef, type: 3}
   cost: 2
   cardActions:
   - actionType: 2

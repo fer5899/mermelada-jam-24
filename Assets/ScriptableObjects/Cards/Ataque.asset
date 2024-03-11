@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Ataque
   cardDescription: "Haz 6 de da\xF1o."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: b0c2dbdd50b5cfe499db949af9e62b69, type: 3}
   cost: 1
   cardActions:
   - actionType: 0

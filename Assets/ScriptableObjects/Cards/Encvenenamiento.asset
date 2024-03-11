@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Envenenamiento
   cardDescription: Aplica 6 de veneno.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 5456915f40055e14b8221d96f7ff084e, type: 3}
   cost: 2
   cardActions:
   - actionType: 6

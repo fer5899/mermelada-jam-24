@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Golpe contundente
   cardDescription: "Haz 6 de da\xF1o. 12 si el rival est\xE1 debilitado."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 3e33649f3b2026241bea5c0f74eeed5b, type: 3}
   cost: 1
   cardActions:
   - actionType: 0

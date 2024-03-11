@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Sanaci\xF3n"
   cardDescription: Recuperas PS.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 1cef35b2efe001844a9eebf88bb6f4d7, type: 3}
   cost: 1
   cardActions:
   - actionType: 1
