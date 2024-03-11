@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Golpe t\xF3xico"
   cardDescription: "Haz 6 de da\xF1o. Aplica 2 de veneno."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 9035a827641279d409473c34dbb35eb1, type: 3}
   cost: 1
   cardActions:
   - actionType: 0

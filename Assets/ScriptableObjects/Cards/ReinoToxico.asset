@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Reino T\xF3xico"
   cardDescription: Triplica el veneno.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: d3757e479a6891e49954bec69f925994, type: 3}
   cost: 0
   cardActions:
   - actionType: 6

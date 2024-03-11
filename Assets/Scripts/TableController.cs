@@ -159,6 +159,8 @@ public class TableController : Singleton<TableController>
     public void PlayInTable(GameObject card)
     {
         CardSO cardData = card.GetComponent<CardController>().cardData;
+        if (PlayerController.Instance.playerMana.Value < cardData.cost)
+            return;
         DiscardCard(card);
         ExecuteCardActions(cardData);
         PlayerController.Instance.LoseMana(cardData.cost);

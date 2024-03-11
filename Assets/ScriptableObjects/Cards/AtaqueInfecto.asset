@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Ataque Infecto
   cardDescription: "Haz 6 de da\xF1o. 10 si el enemigo est\xE1 envenenado."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: aa06f382a8aa41f46be7ae43162876dd, type: 3}
   cost: 1
   cardActions:
   - actionType: 0

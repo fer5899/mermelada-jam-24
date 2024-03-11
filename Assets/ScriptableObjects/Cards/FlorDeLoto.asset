@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Flor de loto
   cardDescription: "Ganas 1 punto de man\xE1."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 8aa6ed7b8896706408eb031158cf75c2, type: 3}
   cost: 0
   cardActions:
   - actionType: 6

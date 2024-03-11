@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Astucia
   cardDescription: "Bloquea 4 de da\xF1o. Roba 1 carta, su coste es 0 este turno."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 7e883079e28704346b8325f898efc10e, type: 3}
   cost: 0
   cardActions:
   - actionType: 2

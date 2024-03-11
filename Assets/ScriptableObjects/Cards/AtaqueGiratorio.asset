@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Ataque Giratorio
   cardDescription: "Haz 7 de da\xF1o. Golpea tantas veces como puntos de man\xE1
     tengas."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 606db732f48f4d041a6bdb0702abee1f, type: 3}
   cost: 0
   cardActions:
   - actionType: 0

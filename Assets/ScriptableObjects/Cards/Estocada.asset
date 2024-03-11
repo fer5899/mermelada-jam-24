@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Estocada
   cardDescription: "Haz 4 de da\xF1o. Aplica 2 de sangrado."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: a715b4d574a6e59458b11a16eae86f95, type: 3}
   cost: 1
   cardActions:
   - actionType: 0

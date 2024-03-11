@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Almacenamiento
   cardDescription: "Bloquea 1 de da\xF1o por cada carta en la pila de descartes."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 7e883079e28704346b8325f898efc10e, type: 3}
   cost: 1
   cardActions:
   - actionType: 2
