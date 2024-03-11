@@ -9,6 +9,7 @@ public class ChangeTurnImg : MonoBehaviour
     public GameManagerSO turnData;
     void Update()
     {
-        turnText.text = "Turno " + turnData.turn.ToString();
+        int turnDisplay = turnData.turn + 1;
+        turnText.text = "Turno " + turnDisplay.ToString();
     }
 }
