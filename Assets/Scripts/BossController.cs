@@ -177,7 +177,7 @@ public class BossController : Singleton<BossController>
     public void GarraUmbria()
     {
         Debug.Log("Boss used Garra Umbria");
-        DealDamage(15);
+        DealDamage(16);
     }
 
     public void Embestida()
