@@ -156,7 +156,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public void UpgradeCard()
     {
         gameManager.playerDeck[Array.IndexOf(gameManager.playerDeck, selectedDeckCard)] = selectedUpgradeCard;
-        // gameManager.EndUpgrade();
+        gameManager.EndUpgrade();
     }
 
 }
