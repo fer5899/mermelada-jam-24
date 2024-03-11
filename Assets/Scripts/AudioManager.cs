@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public GameManagerSO gameManager;
     public static AudioManager Instance;
     public AudioClip[] musicThemes;
+    public AudioClip[] sounds;
     public AudioSource audioSource;
 
     public void Awake()
