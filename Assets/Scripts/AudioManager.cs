@@ -31,21 +31,23 @@ public class AudioManager : MonoBehaviour
     public void OnEnable()
     {
         gameManager.OnCycleStart.AddListener(BattleTheme);
+        gameManager.OnCombatEnd.AddListener(MenuTheme);
     }
 
     public void OnDisable()
     {
-        gameManager.OnCycleStart.RemoveListener(PlayMusic);
+        gameManager.OnCycleStart.RemoveListener(BattleTheme);
+        gameManager.OnCombatEnd.AddListener(MenuTheme);
     }
 
     public void BattleTheme(int num)
     {
-        PlayMusic(0);
+        PlayMusic(1);
     }
 
     public void MenuTheme()
     {
-        PlayMusic(1);
+        PlayMusic(0);
     }
 
     public void SetVolume(float volume)
