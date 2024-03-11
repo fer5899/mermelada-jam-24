@@ -45,7 +45,12 @@ public class GameManagerSO : ScriptableObject
         OnEndGame ??= new UnityEvent();
         OnUpgradeStart ??= new UnityEvent();
         OnUpgradeEnd ??= new UnityEvent();
-        playerDeck = defaultPlayerDeck;
+        // Copy all the default cards to the player deck
+        playerDeck = new CardSO[defaultPlayerDeck.Length];
+        for (int i = 0; i < defaultPlayerDeck.Length; i++)
+        {
+            playerDeck[i] = defaultPlayerDeck[i];
+        }
     }
 
     public void StartCycle()

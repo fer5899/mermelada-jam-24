@@ -73,10 +73,10 @@ public class TableController : Singleton<TableController>
     public void DrawCard(bool costsZero = false)
     {
         if (drawPile.Count <= 0)
-            {
-                Debug.Log("PILA DE ROBO VACIA");
-                MoveCards();
-            }
+        {
+            Debug.Log("PILA DE ROBO VACIA");
+            MoveCards();
+        }
         foreach (GameObject card in hand)
         {
             if (!card.activeSelf)
@@ -91,6 +91,7 @@ public class TableController : Singleton<TableController>
                 CardController loadCard = card.GetComponent<CardController>();
                 loadCard.cardData = drawnCard;
                 loadCard.LoadData(drawnCard);
+                return;
             }
         }
     }
