@@ -20,13 +20,11 @@ public class TableController : Singleton<TableController>
         gameManager.OnCycleStart.AddListener(StartCycle);
         gameManager.OnTurnStart.AddListener(StartTurn);
         gameManager.OnTurnEnd.AddListener(EndTurn);
-        gameManager.OnCombatEnd.AddListener(EndCombat);
     }
 
     public void OnDisable()
     {
         gameManager.OnCycleStart.RemoveListener(StartCycle);
-        gameManager.OnCombatEnd.RemoveListener(EndCombat);
         gameManager.OnTurnStart.RemoveListener(StartTurn);
         gameManager.OnTurnEnd.RemoveListener(EndTurn);
     }
@@ -160,9 +158,10 @@ public class TableController : Singleton<TableController>
     {
         CardSO cardData = card.GetComponent<CardController>().cardData;
         DiscardCard(card);
+        ExecuteCardActions(cardData);
     }
 
-    public void ExecuteActions(CardSO cardData)
+    public void ExecuteCardActions(CardSO cardData)
     {
         foreach (CardAction action in cardData.cardActions)
         {
@@ -180,12 +179,10 @@ public class TableController : Singleton<TableController>
                     Block(action);
                     break;
                 case CardAction.ActionType.drawRandomCard:
-                    // Draw random card
-                    Debug.Log("Drew " + action.amount.value + " cards");
+                    DrawCardsAction(action);
                     break;
                 case CardAction.ActionType.discardRandomCard:
-                    // Discard random card
-                    Debug.Log("Discarded " + action.amount.value + " cards");
+                    DiscardCardsAction(action);
                     break;
                 case CardAction.ActionType.applyStatus:
                     ApplyStatus(action);
@@ -240,8 +237,6 @@ public class TableController : Singleton<TableController>
                 BossController.Instance.TakeDamage((int)Mathf.Ceil(bossTakenDamage));
             }
         }
-
-
     }
 
     public void Heal(CardAction action)
@@ -280,4 +275,21 @@ public class TableController : Singleton<TableController>
             action.targetStatus.AddAmount(action.amount.value);
         }
     }
+
+    public void DrawCardsAction(CardAction action)
+    {
+        for (int i = 0; i < action.amount.value; i++)
+        {
+            DrawCard();
+        }
+    }
+
+    public void DiscardCardsAction(CardAction action)
+    {
+        for (int i = 0; i < action.amount.value; i++)
+        {
+            DiscardRandomCard();
+        }
+    }
+
 }

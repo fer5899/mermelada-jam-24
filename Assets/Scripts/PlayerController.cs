@@ -43,7 +43,7 @@ public class PlayerController : Singleton<PlayerController>
         playerHealth.AddAmount(-damage);
         if (playerHealth.Value <= 0)
         {
-            // gameManager.EndCombat();
+            gameManager.EndCombat();
         }
     }
 
@@ -82,6 +82,16 @@ public class PlayerController : Singleton<PlayerController>
     public void GainThorns(int thorns)
     {
         playerThornsStatusCounter.AddAmount(thorns);
+    }
+
+    public void GainWeak(int weak)
+    {
+        playerWeakStatusCounter.AddAmount(weak);
+    }
+
+    public void GainLoseManaStatus(int amount)
+    {
+        playerLoseManaStatusCounter.AddAmount(amount);
     }
 
     public void OnStartTurn(int turn)
