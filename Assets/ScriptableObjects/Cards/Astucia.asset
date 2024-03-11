@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
-  m_Name: Reforzamiento
+  m_Name: Astucia
   m_EditorClassIdentifier: 
-  cardName: Reforzamiento
-  cardDescription: "Bloquea 5 de da\xF1o. Recupera 1 PS."
+  cardName: Astucia
+  cardDescription: "Bloquea 4 de da\xF1o. Roba 1 carta de la mano al azar, su coste
+    es 0 este turno."
   cardImage: {fileID: 0}
-  cost: 1
+  cost: 0
   cardActions:
   - actionType: 2
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 4
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -31,7 +32,7 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
-  - actionType: 1
+  - actionType: 3
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
@@ -43,5 +44,5 @@ MonoBehaviour:
       constantValue: 0
       variable: {fileID: 0}
       multiplier: 0
-    newCardsCostZero: 0
+    newCardsCostZero: 1
     targetStatus: {fileID: 0}

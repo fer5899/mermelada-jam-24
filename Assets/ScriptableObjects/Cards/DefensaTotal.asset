@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
   m_Name: DefensaTotal
   m_EditorClassIdentifier: 
-  cardName: Defensa total
-  cardDescription: "Bloquea 5 de da\xF1o. Repite tantas veces como punto de man\xE1
-    tengas."
+  cardName: Astucia
+  cardDescription: "Bloquea 4 de da\xF1o. Roba 1 carta, su coste es 0 este turno."
   cardImage: {fileID: 0}
   cost: 0
   cardActions:
@@ -22,13 +21,27 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 4
       variable: {fileID: 0}
       multiplier: 0
     repetition:
       useConstant: 0
       constantValue: 0
-      variable: {fileID: 11400000, guid: 3ce2a2390a8a8a84295886feec6b2904, type: 2}
+      variable: {fileID: 0}
       multiplier: 1
     newCardsCostZero: 0
+    targetStatus: {fileID: 0}
+  - actionType: 3
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 1
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 1
+    newCardsCostZero: 1
     targetStatus: {fileID: 0}
