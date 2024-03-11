@@ -21,14 +21,14 @@ MonoBehaviour:
   - actionType: 6
     executeIfStatusActive: {fileID: 0}
     amount:
-      useConstant: 1
+      useConstant: 0
       constantValue: 3
       variable: {fileID: 0}
       multiplier: 0
     repetition:
       useConstant: 0
       constantValue: 0
-      variable: {fileID: 11400000, guid: 3ce2a2390a8a8a84295886feec6b2904, type: 2}
+      variable: {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}
       multiplier: 1
     newCardsCostZero: 0
     targetStatus: {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}

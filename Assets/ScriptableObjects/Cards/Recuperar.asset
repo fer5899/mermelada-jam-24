@@ -12,13 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
   m_Name: Recuperar
   m_EditorClassIdentifier: 
-  cardName: Recuperar
-  cardDescription: "Recupera una carta, a tu elecci\xF3n, del mazo de descartes.
-    Su coste es 0 este turno."
+  cardName: Usurero
+  cardDescription: Aplica 2 de veneno. Roba una carta al azar.
   cardImage: {fileID: 0}
-  cost: 2
+  cost: 0
   cardActions:
-  - actionType: 4
+  - actionType: 6
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 2
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}
+  - actionType: 3
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
@@ -30,5 +43,5 @@ MonoBehaviour:
       constantValue: 0
       variable: {fileID: 0}
       multiplier: 0
-    newCardsCostZero: 1
+    newCardsCostZero: 0
     targetStatus: {fileID: 0}

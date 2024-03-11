@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PabloScene.unity
     guid: 296f48a0f41ff6b4ba0bee26b1a9f16e
   - enabled: 1
-    path: Assets/Scenes/Marina++.unity
+    path: Assets/Scenes/Combat.unity
     guid: 9028e60fb272a694c82a4d88ebf916e8
   m_configObjects: {}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ciclar
   m_EditorClassIdentifier: 
   cardName: Ciclar
-  cardDescription: Suma 3 espinas. Roba 1 carta
+  cardDescription: Suma 3 espinas. Roba 1 carta.
   cardImage: {fileID: 0}
   cost: 1
   cardActions:

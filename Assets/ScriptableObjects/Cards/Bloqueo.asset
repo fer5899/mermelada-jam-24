@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bloqueo
   m_EditorClassIdentifier: 
   cardName: Bloqueo
-  cardDescription: "Bloquea 5 de da\xF1o"
+  cardDescription: "Bloquea 5 de da\xF1o."
   cardImage: {fileID: 0}
   cost: 1
   cardActions:

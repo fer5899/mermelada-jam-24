@@ -60,7 +60,7 @@ public class TableController : Singleton<TableController>
         discardPileSize.SetValue(discardPile.Count);
     }
 
-    public void DrawCard()
+    public void DrawCard(bool costsZero = false)
     {
         if (drawPile.Count <= 0)
             {
@@ -74,6 +74,10 @@ public class TableController : Singleton<TableController>
                 CardSO drawnCard = drawPile[0];
                 drawPile.Remove(drawnCard);
                 card.SetActive(true);
+                if (costsZero)
+                {
+                    drawnCard.cost = 0;
+                }
                 CardController loadCard = card.GetComponent<CardController>();
                 loadCard.cardData = drawnCard;
                 loadCard.LoadData(drawnCard);
@@ -158,9 +162,11 @@ public class TableController : Singleton<TableController>
     {
         CardSO cardData = card.GetComponent<CardController>().cardData;
         DiscardCard(card);
+        ExecuteCardActions(cardData);
+        PlayerController.Instance.LoseMana(cardData.cost);
     }
 
-    public void ExecuteActions(CardSO cardData)
+    public void ExecuteCardActions(CardSO cardData)
     {
         foreach (CardAction action in cardData.cardActions)
         {
@@ -178,12 +184,10 @@ public class TableController : Singleton<TableController>
                     Block(action);
                     break;
                 case CardAction.ActionType.drawRandomCard:
-                    // Draw random card
-                    Debug.Log("Drew " + action.amount.value + " cards");
+                    DrawCardsAction(action);
                     break;
                 case CardAction.ActionType.discardRandomCard:
-                    // Discard random card
-                    Debug.Log("Discarded " + action.amount.value + " cards");
+                    DiscardCardsAction(action);
                     break;
                 case CardAction.ActionType.applyStatus:
                     ApplyStatus(action);
@@ -238,8 +242,6 @@ public class TableController : Singleton<TableController>
                 BossController.Instance.TakeDamage((int)Mathf.Ceil(bossTakenDamage));
             }
         }
-
-
     }
 
     public void Heal(CardAction action)
@@ -278,4 +280,21 @@ public class TableController : Singleton<TableController>
             action.targetStatus.AddAmount(action.amount.value);
         }
     }
+
+    public void DrawCardsAction(CardAction action)
+    {
+        for (int i = 0; i < action.amount.value; i++)
+        {
+            DrawCard(action.newCardsCostZero);
+        }
+    }
+
+    public void DiscardCardsAction(CardAction action)
+    {
+        for (int i = 0; i < action.amount.value; i++)
+        {
+            DiscardRandomCard();
+        }
+    }
+
 }

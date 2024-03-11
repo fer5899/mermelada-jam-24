@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ataque
   m_EditorClassIdentifier: 
   cardName: Ataque
-  cardDescription: "Haz 6 de da\xF1o"
+  cardDescription: "Haz 6 de da\xF1o."
   cardImage: {fileID: 0}
   cost: 1
   cardActions:

@@ -84,6 +84,16 @@ public class PlayerController : Singleton<PlayerController>
         playerThornsStatusCounter.AddAmount(thorns);
     }
 
+    public void GainWeak(int weak)
+    {
+        playerWeakStatusCounter.AddAmount(weak);
+    }
+
+    public void GainLoseManaStatus(int amount)
+    {
+        playerLoseManaStatusCounter.AddAmount(amount);
+    }
+
     public void OnStartTurn(int turn)
     {
         playerMana.ResetValue();

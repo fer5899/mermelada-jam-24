@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Sanaci\xF3n"
   m_EditorClassIdentifier: 
   cardName: "Sanaci\xF3n"
-  cardDescription: Recuperas 4HP
+  cardDescription: Recuperas PS.
   cardImage: {fileID: 0}
   cost: 1
   cardActions:
