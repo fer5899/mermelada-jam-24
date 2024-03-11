@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Ofrenda
   m_EditorClassIdentifier: 
   cardName: Ofrenda
-  cardDescription: "Recupera una carta, a tu elecci\xF3n, del mazo de descartes."
+  cardDescription: "Descarta una carta al azar, gana 2 puntos de man\xE1."
   cardImage: {fileID: 0}
   cost: 0
   cardActions:
-  - actionType: 4
+  - actionType: 5
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
@@ -31,3 +31,17 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
+  - actionType: 6
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 2
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 11400000, guid: 3ce2a2390a8a8a84295886feec6b2904, type: 2}
