@@ -27,7 +27,7 @@ public class CardController : MonoBehaviour
     public void PlayCard()
     {
         // Add to discard pile
-        //TableController.Instance.AddToDiscardPile(cardData);
+        TableController.Instance.PlayInTable(gameObject);
 
         Debug.Log("Card played: " + cardData.name);
 
@@ -71,13 +71,13 @@ public class CardController : MonoBehaviour
         // }
 
         // Deactivate card
-        DeactivateObject();
+        // DeactivateObject();
 
     }
 
     public void DeactivateObject()
     {
-        TableController.Instance.AddToDiscardPile(cardData);
+        //TableController.Instance.AddToDiscardPile(cardData);
         gameObject.SetActive(false);
     }
 

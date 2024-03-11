@@ -59,15 +59,14 @@ public class TableController : Singleton<TableController>
         discardPileSize.SetValue(discardPile.Count);
     }
 
-    public void DrawCard()
-    {
-
         // Iteramos por las cartas
             // En caso de que no haya cartas para robar ejecutamos la función ShuffleDeck
             // En la primera inactiva
                 // Obtenemos los datos de la carta a robar y la guardamos en una variable temporal
                 // Quitamos la carta obtenida de la pila de robo
                 // Cogemos el CardController de la carta y llamamos a LoadData con la card data robada.
+    public void DrawCard()
+    {
         if (drawPile.Count <= 0)
             {
                 Debug.Log("PILA DE ROBO VACIA");
@@ -75,13 +74,9 @@ public class TableController : Singleton<TableController>
             }
         foreach (GameObject card in hand)
         {
-            
-            Debug.Log("drawPileSize.Value " + drawPileSize.Value + "count " + drawPile.Count);
-
             if (!card.activeSelf)
             {
                 CardSO drawnCard = drawPile[0];
-                Debug.Log("drawnCard: " + drawnCard.cardName);
                 drawPile.Remove(drawnCard);
                 card.SetActive(true);
                 CardController loadCard = card.GetComponent<CardController>();
@@ -95,28 +90,53 @@ public class TableController : Singleton<TableController>
     {
         for (int i = 0; i < discardPile.Count; i++)
             drawPile.Add(discardPile[i]);
+        Debug.Log("**------ESTAMOS EN MOVE CARDS ----------------**");
+        DebugList(drawPile);
+        ShuffleDeck(drawPile);
+        DebugList(drawPile);
         discardPile.Clear();
-        Debug.Log("discardDeck: " + discardPile.Count);
     }
-    public void ShuffleDeck()
+    void ShuffleDeck(List<CardSO> list)
     {
+        int n = list.Count;
+        System.Random rng = new System.Random();
+
+        for (int i = n - 1; i > 0; i--)
+        {
+            // generar indice aleatorio entre 0 e i
+            int k = rng.Next(0, i + 1);
+
+            // swap
+            CardSO temp = list[i];
+            list[i] = list[k];
+            list[k] = temp;
+        }
 
     }
 
+    public void DebugList(List<CardSO> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+            Debug.Log("list[" + i + "]: " + list[i].cardName);
+        Debug.Log("----------------------");
+    }
     public void AddToDiscardPile(CardSO card)
     {
         discardPile.Add(card);
-        Debug.Log("primer nodo lista descarte: " + discardPile[0].cardName);
     }
 
     public void DiscardCard(GameObject card)
     {
-        // Desactivas la carta
+       AddToDiscardPile(card.GetComponent<CardController>().cardData);
+       card.SetActive(false);
     }
 
     public void DiscardRandomCard()
     {
-
+        System.Random rng = new System.Random();
+        int i = rng.Next(0, hand.Length);
+        Debug.Log("*** Discard RAndom card randomNb: ***" + i);
+        DiscardCard(hand[i]);
     }
 
     public void LoadHand()
@@ -127,11 +147,20 @@ public class TableController : Singleton<TableController>
         {
             drawPile.Add(gameManager.playerDeck[i]);
         }
+        DebugList(drawPile);
+        ShuffleDeck(drawPile);
+        DebugList(drawPile);
     }
 
     void Start()
     {
         LoadHand();
         StartTurn(gameManager.turn);
+    }
+
+    public void PlayInTable(GameObject card)
+    {
+        CardSO cardData = card.GetComponent<CardController>().cardData;
+        DiscardCard(card);
     }
 }
