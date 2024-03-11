@@ -10,18 +10,23 @@ public class TableController : Singleton<TableController>
     public CardSO[] hand;
     public CardSO[] discardDeck;
 
+    public void Start()
+    {
+        StartCycle(gameManager.cycle);
+    }
+
     public void OnEnable()
     {
         gameManager.OnCycleStart.AddListener(StartCycle);
-        gameManager.OnCycleEnd.AddListener(EndCycle);
         gameManager.OnTurnStart.AddListener(StartTurn);
         gameManager.OnTurnEnd.AddListener(EndTurn);
+        gameManager.OnCombatEnd.AddListener(EndCombat);
     }
 
     public void OnDisable()
     {
         gameManager.OnCycleStart.RemoveListener(StartCycle);
-        gameManager.OnCycleEnd.RemoveListener(EndCycle);
+        gameManager.OnCombatEnd.RemoveListener(EndCombat);
         gameManager.OnTurnStart.RemoveListener(StartTurn);
         gameManager.OnTurnEnd.RemoveListener(EndTurn);
     }
@@ -29,11 +34,8 @@ public class TableController : Singleton<TableController>
     public void StartCycle(int cycle)
     {
         Debug.Log("Cycle " + cycle + " started");
-    }
-
-    public void EndCycle(int cycle)
-    {
-        Debug.Log("Cycle " + cycle + " ended");
+        gameManager.StartCombat();
+        gameManager.StartTurn();
     }
 
     public void StartTurn(int turn)
@@ -44,5 +46,10 @@ public class TableController : Singleton<TableController>
     public void EndTurn(int turn)
     {
         Debug.Log("Turn " + turn + " ended");
+    }
+
+    public void EndCombat()
+    {
+        Debug.Log("End of combat");
     }
 }

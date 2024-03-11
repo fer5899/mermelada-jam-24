@@ -15,28 +15,24 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public int[] poolRange;
     public CardSO[] upgradeProgression;
     public CardLoader[] upgradeCardLoaders;
-   
-    [System.NonSerialized]
-    public UnityEvent OnUpgradeStart;
-    [System.NonSerialized]
-    public UnityEvent OnUpgradeEnd;
-
-    public void Start()
-    {
-        StartUpgrade();
-    }
 
     public void OnEnable()
     {
-        OnUpgradeStart ??= new UnityEvent();
-        OnUpgradeEnd ??= new UnityEvent();
+        gameManager.OnUpgradeStart.AddListener(StartUpgrade);
+        gameManager.OnUpgradeEnd.AddListener(EndUpgrade);
+    }
+
+    public void OnDisable()
+    {
+        gameManager.OnUpgradeStart.RemoveListener(StartUpgrade);
+        gameManager.OnUpgradeEnd.RemoveListener(EndUpgrade);
     }
 
     public void StartUpgrade()
     {
-        OnUpgradeStart.Invoke();
         getRewardCards();
         getHandOfPlayer();
+        gameManager.EndUpgrade();
     }
 
     private void getHandOfPlayer()
@@ -106,7 +102,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     public void EndUpgrade()
     {
-        OnUpgradeEnd.Invoke();
+        gameManager.EndCycle();    
     }
 
 }

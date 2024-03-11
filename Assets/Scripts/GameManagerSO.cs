@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class GameManagerSO : ScriptableObject
@@ -18,15 +19,23 @@ public class GameManagerSO : ScriptableObject
     public UnityEvent<int> OnTurnStart;
     [System.NonSerialized]
     public UnityEvent<int> OnTurnEnd;
-
+    [System.NonSerialized]
+    public UnityEvent OnCombatStart;
+    [System.NonSerialized]
+    public UnityEvent OnCombatEnd;
+    [System.NonSerialized]
+    public UnityEvent OnUpgradeStart;
+    [System.NonSerialized]
+    public UnityEvent OnUpgradeEnd;
 
     public void OnEnable()
     {
-        cycle = 0;
         OnCycleStart ??= new UnityEvent<int>();
         OnCycleEnd ??= new UnityEvent<int>();
         OnTurnStart ??= new UnityEvent<int>();
         OnTurnEnd ??= new UnityEvent<int>();
+        OnCombatEnd ??= new UnityEvent();
+        OnCombatStart ??= new UnityEvent();
     }
 
     public void StartCycle()
@@ -38,6 +47,7 @@ public class GameManagerSO : ScriptableObject
     {
         OnCycleEnd.Invoke(cycle);
         cycle++;
+        loadScene("Combat");
     }
 
     public void StartTurn()
@@ -51,10 +61,36 @@ public class GameManagerSO : ScriptableObject
         turn++;
     }
 
-    public void StartGame()
+    public void StartCombat()
     {
-        
+        OnCombatStart.Invoke();
     }
 
+    public void EndCombat()
+    {
+        OnCombatEnd.Invoke();
+        loadScene("PabloScene");
+    }
 
+    public void StartUpgrade()
+    {
+        OnUpgradeStart.Invoke();
+    }
+
+    public void EndUpgrade()
+    {
+        OnUpgradeEnd.Invoke();
+    }
+
+    public void loadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
+    public void startGame()
+    {
+        cycle = 0;
+        turn = 0;
+        loadScene("Combat");
+    }
 }
