@@ -60,7 +60,7 @@ public class TableController : Singleton<TableController>
         discardPileSize.SetValue(discardPile.Count);
     }
 
-    public void DrawCard()
+    public void DrawCard(bool costsZero = false)
     {
         if (drawPile.Count <= 0)
             {
@@ -74,6 +74,10 @@ public class TableController : Singleton<TableController>
                 CardSO drawnCard = drawPile[0];
                 drawPile.Remove(drawnCard);
                 card.SetActive(true);
+                if (costsZero)
+                {
+                    drawnCard.cost = 0;
+                }
                 CardController loadCard = card.GetComponent<CardController>();
                 loadCard.cardData = drawnCard;
                 loadCard.LoadData(drawnCard);
@@ -159,6 +163,7 @@ public class TableController : Singleton<TableController>
         CardSO cardData = card.GetComponent<CardController>().cardData;
         DiscardCard(card);
         ExecuteCardActions(cardData);
+        PlayerController.Instance.LoseMana(cardData.cost);
     }
 
     public void ExecuteCardActions(CardSO cardData)
@@ -280,7 +285,7 @@ public class TableController : Singleton<TableController>
     {
         for (int i = 0; i < action.amount.value; i++)
         {
-            DrawCard();
+            DrawCard(action.newCardsCostZero);
         }
     }
 
