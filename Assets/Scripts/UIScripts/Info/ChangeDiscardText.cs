@@ -6,8 +6,9 @@ using TMPro;
 public class ChangeDiscardText : MonoBehaviour
 {
     public TextMeshProUGUI numberText;
+    public IntVariableSO size;
     void Update()
     {
-        numberText.text = "Size of Draw Array";
+        numberText.text = size.Value.ToString();
     }
 }
