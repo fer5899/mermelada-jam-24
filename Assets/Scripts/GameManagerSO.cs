@@ -70,6 +70,7 @@ public class GameManagerSO : ScriptableObject
     {
         OnTurnEnd.Invoke(turn);
         turn++;
+        StartTurn();
     }
 
     public void StartCombat()

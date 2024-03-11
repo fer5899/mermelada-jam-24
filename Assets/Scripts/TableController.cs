@@ -45,13 +45,11 @@ public class TableController : Singleton<TableController>
     public void StartTurn(int turn)
     {
         Debug.Log("Turn " + turn + " started");
-        DrawCard();
     }
 
     public void EndTurn(int turn)
     {
         Debug.Log("Turn " + turn + " ended");
-        StartTurn(turn);
     }
 
     void Update ()
@@ -154,6 +152,10 @@ public class TableController : Singleton<TableController>
             drawPile.Add(gameManager.playerDeck[i]);
         }
         ShuffleDeck(drawPile);
+        for (int i = 0; i < hand.Length; i++)
+        {
+            DrawCard();
+        }
     }
 
     public void PlayInTable(GameObject card)
