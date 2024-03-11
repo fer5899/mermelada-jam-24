@@ -45,6 +45,7 @@ public class TableController : Singleton<TableController>
     public void StartTurn(int turn)
     {
         Debug.Log("Turn " + turn + " started");
+        DrawUntilFull();
     }
 
     public void EndTurn(int turn)
@@ -56,6 +57,17 @@ public class TableController : Singleton<TableController>
     {
         drawPileSize.SetValue(drawPile.Count);
         discardPileSize.SetValue(discardPile.Count);
+    }
+
+    public void DrawUntilFull()
+    {
+        for (int i = 0; i < hand.Length; i++)
+        {
+            if (!hand[i].activeSelf)
+            {
+                DrawCard();
+            }
+        }
     }
 
     public void DrawCard(bool costsZero = false)
@@ -152,10 +164,8 @@ public class TableController : Singleton<TableController>
             drawPile.Add(gameManager.playerDeck[i]);
         }
         ShuffleDeck(drawPile);
-        for (int i = 0; i < hand.Length; i++)
-        {
-            DrawCard();
-        }
+        DrawUntilFull();
+        //DebugList(drawPile);
     }
 
     public void PlayInTable(GameObject card)
@@ -166,6 +176,7 @@ public class TableController : Singleton<TableController>
         DiscardCard(card);
         ExecuteCardActions(cardData);
         PlayerController.Instance.LoseMana(cardData.cost);
+        Debug.Log("Card played: " + cardData.cardName);
     }
 
     public void ExecuteCardActions(CardSO cardData)
