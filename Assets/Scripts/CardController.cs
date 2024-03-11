@@ -20,7 +20,7 @@ public class CardController : MonoBehaviour
         description.text = cardData.cardDescription;
         mana.text = cardData.cost.ToString();
         if (cardData.cardImage)
-            image = cardData.cardImage;
+            image.sprite = cardData.cardImage;
         transform.localScale = new Vector3( 1, 1, 1);
     }
 
