@@ -90,10 +90,9 @@ public class TableController : Singleton<TableController>
     {
         for (int i = 0; i < discardPile.Count; i++)
             drawPile.Add(discardPile[i]);
-        Debug.Log("**------ESTAMOS EN MOVE CARDS ----------------**");
-        DebugList(drawPile);
+        //DebugList(drawPile);
         ShuffleDeck(drawPile);
-        DebugList(drawPile);
+        //DebugList(drawPile);
         discardPile.Clear();
     }
     void ShuffleDeck(List<CardSO> list)
@@ -135,7 +134,15 @@ public class TableController : Singleton<TableController>
     {
         System.Random rng = new System.Random();
         int i = rng.Next(0, hand.Length);
-        Debug.Log("*** Discard RAndom card randomNb: ***" + i);
+        int aux = i;
+        while (!hand[i].activeSelf)
+        {
+            i++;
+            if (i >= hand.Length)
+                i = 0;
+            if (i == aux)
+                return;
+        }
         DiscardCard(hand[i]);
     }
 
@@ -147,9 +154,9 @@ public class TableController : Singleton<TableController>
         {
             drawPile.Add(gameManager.playerDeck[i]);
         }
-        DebugList(drawPile);
+        //DebugList(drawPile);
         ShuffleDeck(drawPile);
-        DebugList(drawPile);
+        //DebugList(drawPile);
     }
 
     void Start()
