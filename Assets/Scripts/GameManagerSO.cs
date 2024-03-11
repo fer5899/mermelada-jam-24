@@ -27,6 +27,8 @@ public class GameManagerSO : ScriptableObject
     public UnityEvent OnUpgradeStart;
     [System.NonSerialized]
     public UnityEvent OnUpgradeEnd;
+    [System.NonSerialized]
+    public UnityEvent OnEndGame;
 
     public void OnEnable()
     {
@@ -36,6 +38,7 @@ public class GameManagerSO : ScriptableObject
         OnTurnEnd ??= new UnityEvent<int>();
         OnCombatEnd ??= new UnityEvent();
         OnCombatStart ??= new UnityEvent();
+        OnEndGame ??= new UnityEvent();
     }
 
     public void StartCycle()
@@ -80,6 +83,12 @@ public class GameManagerSO : ScriptableObject
     public void EndUpgrade()
     {
         OnUpgradeEnd.Invoke();
+    }
+
+    public void EndGame()
+    {
+        OnEndGame.Invoke();
+        Debug.Log("Fin del juego");
     }
 
     public void loadScene(string scene)
