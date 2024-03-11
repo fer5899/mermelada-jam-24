@@ -20,13 +20,11 @@ public class TableController : Singleton<TableController>
         gameManager.OnCycleStart.AddListener(StartCycle);
         gameManager.OnTurnStart.AddListener(StartTurn);
         gameManager.OnTurnEnd.AddListener(EndTurn);
-        gameManager.OnCombatEnd.AddListener(EndCombat);
     }
 
     public void OnDisable()
     {
         gameManager.OnCycleStart.RemoveListener(StartCycle);
-        gameManager.OnCombatEnd.RemoveListener(EndCombat);
         gameManager.OnTurnStart.RemoveListener(StartTurn);
         gameManager.OnTurnEnd.RemoveListener(EndTurn);
     }
