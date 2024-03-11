@@ -11,6 +11,8 @@ public class GameManagerSO : ScriptableObject
     public int turn = 0;
     public CardSO[] playerDeck;
 
+    public CardSO[] defaultPlayerDeck;
+
     [System.NonSerialized]
     public UnityEvent<int> OnCycleStart;
     [System.NonSerialized]
@@ -41,6 +43,9 @@ public class GameManagerSO : ScriptableObject
         OnUpgradeStart ??= new UnityEvent();
         OnUpgradeEnd ??= new UnityEvent();
         OnEndGame ??= new UnityEvent();
+        OnUpgradeStart ??= new UnityEvent();
+        OnUpgradeEnd ??= new UnityEvent();
+        playerDeck = defaultPlayerDeck;
     }
 
     public void StartCycle()
