@@ -170,4 +170,123 @@ public class TableController : Singleton<TableController>
         CardSO cardData = card.GetComponent<CardController>().cardData;
         DiscardCard(card);
     }
+
+    public void ExecuteActions(CardSO cardData)
+    {
+        foreach (CardAction action in cardData.cardActions)
+        {
+            if (action.executeIfStatusActive != null && action.executeIfStatusActive.Value <= 0)
+                continue; // Skip action if status is selected and not active
+            switch (action.actionType)
+            {
+                case CardAction.ActionType.damage:
+                    DealDamage(action);
+                    break;
+                case CardAction.ActionType.heal:
+                    Heal(action);
+                    break;
+                case CardAction.ActionType.block:
+                    Block(action);
+                    break;
+                case CardAction.ActionType.drawRandomCard:
+                    // Draw random card
+                    Debug.Log("Drew " + action.amount.value + " cards");
+                    break;
+                case CardAction.ActionType.discardRandomCard:
+                    // Discard random card
+                    Debug.Log("Discarded " + action.amount.value + " cards");
+                    break;
+                case CardAction.ActionType.applyStatus:
+                    ApplyStatus(action);
+                    break;
+            }
+        }
+    }
+
+    public void DealDamage(CardAction action)
+    {
+        float baseDamage = action.amount.value;
+        float playerDamageOutput;
+        float bossTakenDamage;
+
+        // Apply player status multipliers
+        if (PlayerController.Instance.playerWeakStatusCounter.Value > 0 && PlayerController.Instance.playerFuryStatusCounter.Value > 0)
+        {
+            // If both weak and fury are active, they cancel each other out
+            playerDamageOutput = baseDamage;
+        }
+        else
+        {
+            // If only one of them is active, apply the multiplier to the base damage
+            if (PlayerController.Instance.playerWeakStatusCounter.Value > 0)
+            {
+                playerDamageOutput = baseDamage * 0.8f; // Weak multiplier
+            }
+            else if (PlayerController.Instance.playerFuryStatusCounter.Value > 0)
+            {
+                playerDamageOutput = baseDamage * 1.2f; // Fury multiplier
+            }
+            else
+            {
+                playerDamageOutput = baseDamage;
+            }
+        }
+
+        bossTakenDamage = playerDamageOutput;
+        // Aplly boss bleed if active
+        if (BossController.Instance.bossBleedStatusCounter.Value > 0)
+        {
+            bossTakenDamage = playerDamageOutput * 1.2f; // Bleed multiplier
+        }
+
+        BossController.Instance.TakeDamage((int)Mathf.Ceil(bossTakenDamage));
+
+        // Repeat damage dealing as many times as repetition value
+        if (action.repetition.value > 0)
+        {
+            for (int i = 0; i < action.repetition.value; i++)
+            {
+                BossController.Instance.TakeDamage((int)Mathf.Ceil(bossTakenDamage));
+            }
+        }
+
+
+    }
+
+    public void Heal(CardAction action)
+    {
+        PlayerController.Instance.Heal(action.amount.value);
+
+        // Repeat healing as many times as repetition value
+        if (action.repetition.value > 0)
+        {
+            for (int i = 0; i < action.repetition.value; i++)
+            {
+                PlayerController.Instance.Heal(action.amount.value);
+            }
+        }
+    }
+
+    public void Block(CardAction action)
+    {
+        PlayerController.Instance.GainBlock(action.amount.value);
+
+        // Repeat blocking as many times as repetition value
+        if (action.repetition.value > 0)
+        {
+            for (int i = 0; i < action.repetition.value; i++)
+            {
+                PlayerController.Instance.GainBlock(action.amount.value);
+            }
+        }
+    }
+
+    public void ApplyStatus(CardAction action)
+    {
+        // Apply status
+        if (action.targetStatus != null)
+        {
+            action.targetStatus.AddAmount(action.amount.value);
+        }
+    }
 }
