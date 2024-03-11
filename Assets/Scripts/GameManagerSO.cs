@@ -11,6 +11,8 @@ public class GameManagerSO : ScriptableObject
     public int turn = 0;
     public CardSO[] playerDeck;
 
+    public CardSO[] defaultPlayerDeck;
+
     [System.NonSerialized]
     public UnityEvent<int> OnCycleStart;
     [System.NonSerialized]
@@ -38,7 +40,12 @@ public class GameManagerSO : ScriptableObject
         OnTurnEnd ??= new UnityEvent<int>();
         OnCombatEnd ??= new UnityEvent();
         OnCombatStart ??= new UnityEvent();
+        OnUpgradeStart ??= new UnityEvent();
+        OnUpgradeEnd ??= new UnityEvent();
         OnEndGame ??= new UnityEvent();
+        OnUpgradeStart ??= new UnityEvent();
+        OnUpgradeEnd ??= new UnityEvent();
+        playerDeck = defaultPlayerDeck;
     }
 
     public void StartCycle()
@@ -50,7 +57,7 @@ public class GameManagerSO : ScriptableObject
     {
         OnCycleEnd.Invoke(cycle);
         cycle++;
-        loadScene("Combat");
+        loadScene("ImagenInicio");
     }
 
     public void StartTurn()
@@ -88,7 +95,21 @@ public class GameManagerSO : ScriptableObject
     public void EndGame()
     {
         OnEndGame.Invoke();
-        Debug.Log("Fin del juego");
+        cycle = 0;
+        turn = 0;
+        loadScene("ImagenFinal");
+    }
+
+    public void startGame()
+    {
+        cycle = 0;
+        turn = 0;
+        loadScene("ImagenInicio");
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
     }
 
     public void loadScene(string scene)
@@ -96,10 +117,10 @@ public class GameManagerSO : ScriptableObject
         SceneManager.LoadScene(scene);
     }
 
-    public void startGame()
+    public IEnumerator MyCoroutine(string scene)
     {
-        cycle = 0;
-        turn = 0;
-        loadScene("Combat");
+        yield return new WaitForSeconds(5f);
+        loadScene(scene);
     }
+
 }

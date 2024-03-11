@@ -18,7 +18,24 @@ public class IntReference
 
     public int value
     {
-        get { return useConstant ? constantValue : variable.Value * multiplier; }
+        get {
+            if (useConstant)
+            {
+                return constantValue;
+            }
+            else
+            {
+                if (variable != null)
+                {
+                    return variable.Value * multiplier;
+                }
+                else
+                {
+                    Debug.LogWarning("Variable is not assigned in IntReference");
+                    return constantValue;
+                }
+            }
+        }
     }
 
     public int defaultValue
