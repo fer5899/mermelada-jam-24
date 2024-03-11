@@ -73,6 +73,7 @@ public class GameManagerSO : ScriptableObject
     {
         OnCombatEnd.Invoke();
         loadScene("PabloScene");
+        UnloadScene("Pablo")
     }
 
     public void StartUpgrade()
@@ -93,7 +94,12 @@ public class GameManagerSO : ScriptableObject
 
     public void loadScene(string scene)
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+    }
+
+    public void UnloadScene(string scene)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
     }
 
     public void startGame()

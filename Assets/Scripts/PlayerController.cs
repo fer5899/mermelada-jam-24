@@ -43,7 +43,7 @@ public class PlayerController : Singleton<PlayerController>
         playerHealth.AddAmount(-damage);
         if (playerHealth.Value <= 0)
         {
-            // gameManager.EndCombat();
+            gameManager.EndCombat();
         }
     }
 

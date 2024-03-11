@@ -34,7 +34,7 @@ public class BossController : Singleton<BossController>
         bossHealth.AddAmount(-damage);
         if (bossHealth.Value <= 0)
         {
-            // gameManager.EndGame();
+            gameManager.EndGame();
         }
     }
 
