@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Irascible
   cardDescription: Aumenta la furia en 3 puntos.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 434ae5dcf6876284bb73262b4f4fb712, type: 3}
   cost: 1
   cardActions:
   - actionType: 6

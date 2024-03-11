@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Reflexi\xF3n"
   cardDescription: Descarta tu mano. Roba de nuevo.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 21476fee51861f94892b4c79c46068b0, type: 3}
   cost: 1
   cardActions:
   - actionType: 5

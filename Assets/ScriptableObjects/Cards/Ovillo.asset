@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Ovillo
   cardDescription: "Bloquea 6 de da\xF1o. Si est\xE1s debilitado, bloquea 10."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: bcf04aeccfbabcf478aace6fcf7f94bc, type: 3}
   cost: 1
   cardActions:
   - actionType: 2

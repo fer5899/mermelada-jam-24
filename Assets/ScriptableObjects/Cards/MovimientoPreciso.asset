@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: MovimientoPreciso
   cardDescription: "Bloquea 4 de da\xF1o. Haz 5 de da\xF1o."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 00fdca6cf465e094899e70cec2fbd5f3, type: 3}
   cost: 2
   cardActions:
   - actionType: 2

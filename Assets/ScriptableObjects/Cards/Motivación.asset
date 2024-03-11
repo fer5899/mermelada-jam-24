@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: "Motivaci\xF3n"
   cardDescription: Aumenta la furia en 1 punto.
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: cc9109018f0469b4c9f9d30e01e29553, type: 3}
   cost: 0
   cardActions:
   - actionType: 6

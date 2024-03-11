@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Ahorro
   cardDescription: "Haz 8 de da\xF1o. Roba una carta."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 6908bb4b3a5bd1f4ba7ee289cbf3df98, type: 3}
   cost: 1
   cardActions:
   - actionType: 0

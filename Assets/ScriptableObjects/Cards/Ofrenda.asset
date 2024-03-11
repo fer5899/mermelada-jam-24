@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Ofrenda
   cardDescription: "Descarta una carta al azar, gana 2 puntos de man\xE1."
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 46bd9ce2d11378c4abf519d59105ba14, type: 3}
   cost: 0
   cardActions:
   - actionType: 5
