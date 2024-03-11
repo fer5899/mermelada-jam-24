@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
-  m_Name: Inercia
+  m_Name: MuroRoca
   m_EditorClassIdentifier: 
-  cardName: Inercia
-  cardDescription: "Haz 5 de da\xF1o. Repite tantas veces como furia poseas."
+  cardName: Muro roca
+  cardDescription: "Bloquea 10 de da\xF1o. "
   cardImage: {fileID: 0}
   cost: 1
   cardActions:
-  - actionType: 0
+  - actionType: 2
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 4
+      constantValue: 10
       variable: {fileID: 0}
       multiplier: 0
     repetition:
       useConstant: 0
       constantValue: 0
-      variable: {fileID: 11400000, guid: 799f689a7f581c448895e2a62bded8ee, type: 2}
-      multiplier: 1
+      variable: {fileID: 0}
+      multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}

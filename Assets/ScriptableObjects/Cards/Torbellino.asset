@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
-  m_Name: HeridaAbierta
+  m_Name: Torbellino
   m_EditorClassIdentifier: 
-  cardName: Herida Abierta
-  cardDescription: "Haz 12 de da\xF1o. 20 si el rival est\xE1 sangrando."
+  cardName: Torbellino
+  cardDescription: "Haz 15  de da\xF1o. Aplica 2 de debilidad. Suma 3 espinas."
   cardImage: {fileID: 0}
-  cost: 2
+  cost: 3
   cardActions:
   - actionType: 0
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 12
+      constantValue: 15
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -31,11 +31,11 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
-  - actionType: 0
-    executeIfStatusActive: {fileID: 11400000, guid: e88b000aba533a34eae6e304d1118b73, type: 2}
+  - actionType: 6
+    executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 8
+      constantValue: 2
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -44,4 +44,18 @@ MonoBehaviour:
       variable: {fileID: 0}
       multiplier: 0
     newCardsCostZero: 0
-    targetStatus: {fileID: 0}
+    targetStatus: {fileID: 11400000, guid: 3b9c8b9e410f3e54ba8cebb601fd4e9e, type: 2}
+  - actionType: 6
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 3
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 11400000, guid: 5545ba39c01343d40b7b2b9f53bdf1d5, type: 2}

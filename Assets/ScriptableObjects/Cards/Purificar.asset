@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Purificar
   m_EditorClassIdentifier: 
   cardName: Purificar
-  cardDescription: 
+  cardDescription: Elimina toda la debilidad.
   cardImage: {fileID: 0}
   cost: 0
   cardActions:

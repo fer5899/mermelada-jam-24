@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
-  m_Name: HeridaAbierta
+  m_Name: Beneficio
   m_EditorClassIdentifier: 
-  cardName: Herida Abierta
-  cardDescription: "Haz 12 de da\xF1o. 20 si el rival est\xE1 sangrando."
+  cardName: Beneficio
+  cardDescription: "Bloquea 2 de da\xF1o. Haz 6 de da\xF1o. Recupera 6PS. "
   cardImage: {fileID: 0}
   cost: 2
   cardActions:
-  - actionType: 0
+  - actionType: 2
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 12
+      constantValue: 2
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -32,10 +32,24 @@ MonoBehaviour:
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
   - actionType: 0
-    executeIfStatusActive: {fileID: 11400000, guid: e88b000aba533a34eae6e304d1118b73, type: 2}
+    executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 8
+      constantValue: 6
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 0}
+  - actionType: 1
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 6
       variable: {fileID: 0}
       multiplier: 0
     repetition:
