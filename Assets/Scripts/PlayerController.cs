@@ -96,6 +96,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void OnStartTurn(int turn)
     {
+        Debug.Log("Player turn started, mana reset");
         playerMana.ResetValue();
         playerBlock.ResetValue();
         ExecuteStatuses();

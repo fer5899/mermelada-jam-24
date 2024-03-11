@@ -22,7 +22,6 @@ public class BossStatusScript : MonoBehaviour
         {
             o.SetActive(true);
             TextMeshProUGUI text = o.GetComponentInChildren<TextMeshProUGUI>();
-            Debug.Log("DATA VALUE " + data.Value);
             text.text = data.Value.ToString();
         }
         else
@@ -35,7 +34,6 @@ public class BossStatusScript : MonoBehaviour
             return dataPoison;
         else if (o.name == "Blood")
         {
-            //Debug.Log("FGLASDBFLABSFLASBFLASBFLABSFLJABSLFJBASLJFDBLSAJB");
             return dataBlood;
         }
         else if (o.name == "Weak")
