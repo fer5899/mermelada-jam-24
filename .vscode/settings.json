@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "mermeladaJam.sln"
+    "dotnet.defaultSolution": "mermelada-jam-24.sln"
 }
