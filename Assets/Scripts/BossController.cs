@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BossController : Singleton<BossController>
 {
@@ -43,6 +44,8 @@ public class BossController : Singleton<BossController>
         BossAttack.carga,
         BossAttack.requiem,
     };
+
+    public TextMeshProUGUI bossAttackText;
 
     public void OnEnable()
     {
@@ -185,55 +188,56 @@ public class BossController : Singleton<BossController>
 
     public void GarraUmbria()
     {
-        Debug.Log("Boss used Garra Umbria");
+        bossAttackText.text = "El Profundo usó Garra Umbría\n(16 de daño)";
         DealDamage(16);
     }
 
     public void Embestida()
     {
-        Debug.Log("Boss used Embestida");
+        bossAttackText.text = "El Profundo usó Embestida\n(10 de daño, 1 de debilidad)";
         DealDamage(10);
-        PlayerController.Instance.GainWeak(1);
+        PlayerController.Instance.GainWeak(2);
     }
 
     public void Reposo()
     {
-        Debug.Log("Boss used Reposo");
+        bossAttackText.text = "El Profundo te observa amenazante";
     }
 
     public void Rencor()
     {
-        Debug.Log("Boss used Rencor");
+        bossAttackText.text = "El Profundo usó Rencor\n(6 de daño, 1 de maná perdido)";
         DealDamage(6);
         PlayerController.Instance.GainLoseManaStatus(1);
     }
 
     public void Carga()
     {
-        Debug.Log("Boss used Carga ataque");
+        bossAttackText.text = "El Profundo se prepara para atacar";
+        DealDamage(20);
     }
 
     public void RayoOscuro()
     {
-        Debug.Log("Boss used Rayo Oscuro");
+        bossAttackText.text = "El Profundo usó Rayo Oscuro\n(25 de daño)";
         DealDamage(25);
     }
 
     public void GritoAterrador()
     {
-        Debug.Log("Boss used Grito Aterrador");
-        PlayerController.Instance.GainWeak(3);
+        bossAttackText.text = "El Profundo usó Grito Aterrador\n(3 de debilidad)";
+        PlayerController.Instance.GainWeak(4);
     }
 
     public void Curacion()
     {
-        Debug.Log("Boss used Curacion");
+        bossAttackText.text = "El Profundo usó Curación\n(15 de curación)";
         Heal(15);
     }
 
     public void Requiem()
     {
-        Debug.Log("Boss used Requiem");
+        bossAttackText.text = "El Profundo usó Requiem\n(10000 de daño)";
         DealDamage(10000);
     }
 
