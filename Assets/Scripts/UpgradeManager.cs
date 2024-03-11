@@ -85,7 +85,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
         //ADD SIZE TO POOL ARRAY
         cardsPool = new CardSO[poolSize[poolChoosen]];
-        Debug.Log("cards Pool " + poolChoosen);
         //GET THE STARTING ARRAY OF THE POOL
         for (int i = 0; i < poolChoosen; i++)
         {
@@ -95,7 +94,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
             }
         }
 
-        Debug.Log("start " + startCard);
         //GET THE CARDS OF THE ARRAY OF CARDS TO INTRODUCE IN THE CARD OF THE POOL
         for (int i = 0; i < cardsPool.Length; i++)
         {

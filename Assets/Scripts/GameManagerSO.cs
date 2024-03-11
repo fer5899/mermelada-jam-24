@@ -51,5 +51,10 @@ public class GameManagerSO : ScriptableObject
         turn++;
     }
 
+    public void StartGame()
+    {
+        
+    }
+
 
 }
