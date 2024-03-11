@@ -133,15 +133,24 @@ public class BossController : Singleton<BossController>
 
     public void DealDamage(int damage)
     {
-        float finalDamage = damage;
+        float modifiedDamage = damage;
+        int bossDamageOutput;
+        int finalDamage;
 
         // Apply weak status multiplier
         if (bossWeakStatusCounter.Value > 0)
         {
-            finalDamage *= 0.8f;
+            modifiedDamage *= 0.8f;
         }
 
-        PlayerController.Instance.TakeDamage((int)Mathf.Ceil(finalDamage));
+        bossDamageOutput = (int)Mathf.Ceil(modifiedDamage);
+
+        finalDamage = bossDamageOutput - PlayerController.Instance.playerBlock.Value;
+
+        if (finalDamage > 0)
+        {
+            PlayerController.Instance.TakeDamage(finalDamage);
+        }
 
         // Take thorns damage if active
         if (PlayerController.Instance.playerThornsStatusCounter.Value > 0)
