@@ -18,27 +18,30 @@ public class TableController : Singleton<TableController>
     public void OnEnable()
     {
         gameManager.OnCycleStart.AddListener(StartCycle);
-        gameManager.OnCycleEnd.AddListener(EndCycle);
         gameManager.OnTurnStart.AddListener(StartTurn);
         gameManager.OnTurnEnd.AddListener(EndTurn);
+        gameManager.OnCombatEnd.AddListener(EndCombat);
     }
 
     public void OnDisable()
     {
         gameManager.OnCycleStart.RemoveListener(StartCycle);
-        gameManager.OnCycleEnd.RemoveListener(EndCycle);
+        gameManager.OnCombatEnd.RemoveListener(EndCombat);
         gameManager.OnTurnStart.RemoveListener(StartTurn);
         gameManager.OnTurnEnd.RemoveListener(EndTurn);
+    }
+
+    public void Start()
+    {
+        LoadHand();
+        gameManager.StartCycle();
     }
 
     public void StartCycle(int cycle)
     {
         Debug.Log("Cycle " + cycle + " started");
-    }
-
-    public void EndCycle(int cycle)
-    {
-        Debug.Log("Cycle " + cycle + " ended");
+        gameManager.StartCombat();
+        gameManager.StartTurn();
     }
 
     public void StartTurn(int turn)
@@ -59,12 +62,6 @@ public class TableController : Singleton<TableController>
         discardPileSize.SetValue(discardPile.Count);
     }
 
-        // Iteramos por las cartas
-            // En caso de que no haya cartas para robar ejecutamos la función ShuffleDeck
-            // En la primera inactiva
-                // Obtenemos los datos de la carta a robar y la guardamos en una variable temporal
-                // Quitamos la carta obtenida de la pila de robo
-                // Cogemos el CardController de la carta y llamamos a LoadData con la card data robada.
     public void DrawCard()
     {
         if (drawPile.Count <= 0)
@@ -157,12 +154,6 @@ public class TableController : Singleton<TableController>
         //DebugList(drawPile);
         ShuffleDeck(drawPile);
         //DebugList(drawPile);
-    }
-
-    void Start()
-    {
-        LoadHand();
-        StartTurn(gameManager.turn);
     }
 
     public void PlayInTable(GameObject card)

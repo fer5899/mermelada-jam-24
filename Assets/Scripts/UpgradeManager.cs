@@ -15,28 +15,24 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public int[] poolRange;
     public CardSO[] upgradeProgression;
     public CardLoader[] upgradeCardLoaders;
-   
-    [System.NonSerialized]
-    public UnityEvent OnUpgradeStart;
-    [System.NonSerialized]
-    public UnityEvent OnUpgradeEnd;
-
-    public void Start()
-    {
-        StartUpgrade();
-    }
 
     public void OnEnable()
     {
-        OnUpgradeStart ??= new UnityEvent();
-        OnUpgradeEnd ??= new UnityEvent();
+        gameManager.OnUpgradeStart.AddListener(StartUpgrade);
+        gameManager.OnUpgradeEnd.AddListener(EndUpgrade);
+    }
+
+    public void OnDisable()
+    {
+        gameManager.OnUpgradeStart.RemoveListener(StartUpgrade);
+        gameManager.OnUpgradeEnd.RemoveListener(EndUpgrade);
     }
 
     public void StartUpgrade()
     {
-        OnUpgradeStart.Invoke();
         getRewardCards();
         getHandOfPlayer();
+        gameManager.EndUpgrade();
     }
 
     private void getHandOfPlayer()
@@ -85,7 +81,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
         //ADD SIZE TO POOL ARRAY
         cardsPool = new CardSO[poolSize[poolChoosen]];
-        Debug.Log("cards Pool " + poolChoosen);
         //GET THE STARTING ARRAY OF THE POOL
         for (int i = 0; i < poolChoosen; i++)
         {
@@ -95,7 +90,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
             }
         }
 
-        Debug.Log("start " + startCard);
         //GET THE CARDS OF THE ARRAY OF CARDS TO INTRODUCE IN THE CARD OF THE POOL
         for (int i = 0; i < cardsPool.Length; i++)
         {
@@ -108,7 +102,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     public void EndUpgrade()
     {
-        OnUpgradeEnd.Invoke();
+        gameManager.EndCycle();    
     }
 
 }

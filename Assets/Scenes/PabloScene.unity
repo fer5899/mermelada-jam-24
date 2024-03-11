@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 1001378149}
   - component: {fileID: 1001378148}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 1220034604}
   - component: {fileID: 1220034603}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1215,7 +1215,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1220034604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2051589006}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1220034604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,9 +1673,9 @@ MonoBehaviour:
   gameManager: {fileID: 11400000, guid: 225a2619a3ab8a84189f2deb4336f66b, type: 2}
   organizer: {fileID: 2002193568}
   prefab: {fileID: 1066607451981399018, guid: 4e3b93bd0f5847f4e84c45d3477db95c, type: 3}
-  startRound: 16
-  poolSize: 050000000e0000001d000000270000002c0000002e000000
-  poolRange: 0c00000012000000170000001b0000001d00000020000000
+  startRound: 17
+  poolSize: 05000000090000000f0000000a0000000500000002000000
+  poolRange: 0c0000000600000005000000040000000200000003000000
   upgradeProgression:
   - {fileID: 11400000, guid: 0d947ddc1330d29468ab8b3cdc9871f3, type: 2}
   - {fileID: 11400000, guid: cd9dd47dda6ddbb4db6c4eddb89a5f85, type: 2}
