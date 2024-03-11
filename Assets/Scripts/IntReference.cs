@@ -31,7 +31,6 @@ public class IntReference
                 }
                 else
                 {
-                    Debug.LogWarning("Variable is not assigned in IntReference");
                     return constantValue;
                 }
             }
