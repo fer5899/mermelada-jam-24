@@ -49,7 +49,6 @@ public class UpgradeManager : Singleton<UpgradeManager>
     {
         for (int i = 0; i < gameManager.playerDeck.Length; i++)
         {   
-            Debug.Log("hola estoy aqui");
             GameObject newChild = Instantiate(prefab, organizer.transform);
             CardLoader cardDeck = newChild.GetComponent<CardLoader>();
             cardDeck.LoadCard(gameManager.playerDeck[i]);
