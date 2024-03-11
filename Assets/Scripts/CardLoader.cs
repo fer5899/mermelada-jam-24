@@ -17,7 +17,7 @@ public class CardLoader : MonoBehaviour
         description.text = cardData.cardDescription;
         mana.text = cardData.cost.ToString();
         if (cardData.cardImage)
-            image = cardData.cardImage;
+            image.sprite = cardData.cardImage;
     }
     
 }
