@@ -174,7 +174,7 @@ public class TableController : Singleton<TableController>
         float bossTakenDamage;
 
         // Apply player status multipliers
-        if (PlayerController.Instance.playerWeak.Value > 0 && PlayerController.Instance.playerFury.Value > 0)
+        if (PlayerController.Instance.playerWeakStatusCounter.Value > 0 && PlayerController.Instance.playerFuryStatusCounter.Value > 0)
         {
             // If both weak and fury are active, they cancel each other out
             playerDamageOutput = baseDamage;
@@ -182,11 +182,11 @@ public class TableController : Singleton<TableController>
         else
         {
             // If only one of them is active, apply the multiplier to the base damage
-            if (PlayerController.Instance.playerWeak.Value > 0)
+            if (PlayerController.Instance.playerWeakStatusCounter.Value > 0)
             {
                 playerDamageOutput = baseDamage * 0.8f; // Weak multiplier
             }
-            else if (PlayerController.Instance.playerFury.Value > 0)
+            else if (PlayerController.Instance.playerFuryStatusCounter.Value > 0)
             {
                 playerDamageOutput = baseDamage * 1.2f; // Fury multiplier
             }
@@ -198,7 +198,7 @@ public class TableController : Singleton<TableController>
 
         bossTakenDamage = playerDamageOutput;
         // Aplly boss bleed if active
-        if (BossController.Instance.bossBleed.Value > 0)
+        if (BossController.Instance.bossBleedStatusCounter.Value > 0)
         {
             bossTakenDamage = playerDamageOutput * 1.2f; // Bleed multiplier
         }

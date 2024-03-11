@@ -10,11 +10,11 @@ public class PlayerController : Singleton<PlayerController>
     public IntVariableSO playerBlock;
 
     // Statuses
-    public IntVariableSO playerFury;
-    public IntVariableSO playerThorns;
-    public IntVariableSO playerWeak;
-    public IntVariableSO playerGainMana;
-    public IntVariableSO playerLoseMana;
+    public IntVariableSO playerFuryStatusCounter;
+    public IntVariableSO playerThornsStatusCounter;
+    public IntVariableSO playerWeakStatusCounter;
+    public IntVariableSO playerGainManaStatusCounter;
+    public IntVariableSO playerLoseManaStatusCounter;
 
     public void OnEnable()
     {
@@ -31,11 +31,11 @@ public class PlayerController : Singleton<PlayerController>
         playerHealth.ResetValue();
         playerMana.ResetValue();
         playerBlock.ResetValue();
-        playerFury.ResetValue();
-        playerThorns.ResetValue();
-        playerWeak.ResetValue();
-        playerGainMana.ResetValue();
-        playerLoseMana.ResetValue();
+        playerFuryStatusCounter.ResetValue();
+        playerThornsStatusCounter.ResetValue();
+        playerWeakStatusCounter.ResetValue();
+        playerGainManaStatusCounter.ResetValue();
+        playerLoseManaStatusCounter.ResetValue();
     }
 
     public void TakeDamage(int damage)
@@ -76,12 +76,12 @@ public class PlayerController : Singleton<PlayerController>
 
     public void GainFury(int fury)
     {
-        playerFury.AddAmount(fury);
+        playerFuryStatusCounter.AddAmount(fury);
     }
 
     public void GainThorns(int thorns)
     {
-        playerThorns.AddAmount(thorns);
+        playerThornsStatusCounter.AddAmount(thorns);
     }
 
     public void OnStartTurn(int turn)
@@ -93,26 +93,26 @@ public class PlayerController : Singleton<PlayerController>
 
     public void ExecuteStatuses()
     {
-        if (playerWeak.Value > 0)
+        if (playerWeakStatusCounter.Value > 0)
         {
-            playerWeak.AddAmount(-1);
+            playerWeakStatusCounter.AddAmount(-1);
         }
-        if (playerFury.Value > 0)
+        if (playerFuryStatusCounter.Value > 0)
         {
-            playerFury.AddAmount(-1);
+            playerFuryStatusCounter.AddAmount(-1);
         }
-        if (playerThorns.Value > 0)
+        if (playerThornsStatusCounter.Value > 0)
         {
-            playerThorns.AddAmount(-1);
+            playerThornsStatusCounter.AddAmount(-1);
         }
-        if (playerGainMana.Value > 0)
+        if (playerGainManaStatusCounter.Value > 0)
         {
-            playerGainMana.AddAmount(-1);
+            playerGainManaStatusCounter.AddAmount(-1);
             GainMana(1);
         }
-        if (playerLoseMana.Value > 0)
+        if (playerLoseManaStatusCounter.Value > 0)
         {
-            playerLoseMana.AddAmount(-1);
+            playerLoseManaStatusCounter.AddAmount(-1);
             LoseMana(1);
         }
     }
