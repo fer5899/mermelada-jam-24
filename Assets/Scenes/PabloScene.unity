@@ -760,7 +760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 983073754}
   - component: {fileID: 983073756}
-  - component: {fileID: 983073755}
   m_Layer: 5
   m_Name: Organizer (1)
   m_TagString: Untagged
@@ -790,27 +789,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.0000074706}
   m_SizeDelta: {x: 400, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &983073755
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983073753}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!114 &983073756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,7 +896,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1001378149}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 225a2619a3ab8a84189f2deb4336f66b, type: 2}
+        m_TargetAssemblyTypeName: GameManagerSO, Assembly-CSharp
+        m_MethodName: EndUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1001378149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,13 +1206,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051589006}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2051589007}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: UpgradeCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1558,7 +1548,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2002193569}
-  - component: {fileID: 2002193572}
   - component: {fileID: 2002193571}
   - component: {fileID: 2002193570}
   m_Layer: 5
@@ -1620,27 +1609,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002193568}
   m_CullTransparentMesh: 1
---- !u!223 &2002193572
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002193568}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &2051589006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1694,7 @@ MonoBehaviour:
   upgradeCardLoaders:
   - {fileID: 1619028612}
   - {fileID: 312877603}
+  continueButton: {fileID: 1220034601}
 --- !u!4 &2051589008
 Transform:
   m_ObjectHideFlags: 0

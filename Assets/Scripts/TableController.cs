@@ -45,13 +45,11 @@ public class TableController : Singleton<TableController>
     public void StartTurn(int turn)
     {
         Debug.Log("Turn " + turn + " started");
-        DrawCard();
     }
 
     public void EndTurn(int turn)
     {
         Debug.Log("Turn " + turn + " ended");
-        StartTurn(turn);
     }
 
     void Update ()
@@ -155,12 +153,18 @@ public class TableController : Singleton<TableController>
         }
         //DebugList(drawPile);
         ShuffleDeck(drawPile);
+        for (int i = 0; i < hand.Length; i++)
+        {
+            DrawCard();
+        }
         //DebugList(drawPile);
     }
 
     public void PlayInTable(GameObject card)
     {
         CardSO cardData = card.GetComponent<CardController>().cardData;
+        if (PlayerController.Instance.playerMana.Value < cardData.cost)
+            return;
         DiscardCard(card);
         ExecuteCardActions(cardData);
         PlayerController.Instance.LoseMana(cardData.cost);
