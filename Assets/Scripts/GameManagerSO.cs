@@ -51,6 +51,7 @@ public class GameManagerSO : ScriptableObject
     public void StartCycle()
     {
         OnCycleStart.Invoke(cycle);
+        turn = 0;
     }
 
     public void EndCycle()
@@ -96,14 +97,12 @@ public class GameManagerSO : ScriptableObject
     {
         OnEndGame.Invoke();
         cycle = 0;
-        turn = 0;
-        loadScene("ImagenFinal");
+        loadScene("ImagenFinal1");
     }
 
     public void startGame()
     {
         cycle = 0;
-        turn = 0;
         loadScene("ImagenInicio");
     }
 
@@ -119,7 +118,7 @@ public class GameManagerSO : ScriptableObject
 
     public IEnumerator MyCoroutine(string scene)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         loadScene(scene);
     }
 

@@ -153,9 +153,7 @@ public class TableController : Singleton<TableController>
         {
             drawPile.Add(gameManager.playerDeck[i]);
         }
-        //DebugList(drawPile);
         ShuffleDeck(drawPile);
-        //DebugList(drawPile);
     }
 
     public void PlayInTable(GameObject card)
