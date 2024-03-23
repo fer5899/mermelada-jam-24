@@ -92,7 +92,7 @@ public class GameManagerSO : ScriptableObject
     public void EndCombat()
     {
         OnCombatEnd.Invoke();
-        loadScene("PabloScene");
+        loadScene("ImagenMuertePlayer");
     }
 
     public void StartUpgrade()
@@ -135,9 +135,9 @@ public class GameManagerSO : ScriptableObject
         SceneManager.LoadScene(scene);
     }
 
-    public IEnumerator MyCoroutine(string scene)
+    public IEnumerator WaitAndLoadScene(string scene, float time)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(time);
         loadScene(scene);
     }
 

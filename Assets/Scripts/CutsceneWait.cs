@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DelayTimeEnd2 : MonoBehaviour
+public class CutsceneWait : MonoBehaviour
 {
     public GameManagerSO gameManager;
+    public string sceneToLoad;
+    public float waitTime;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(gameManager.MyCoroutine("Menú"));
+        StartCoroutine(gameManager.WaitAndLoadScene(sceneToLoad, waitTime));
     }
 }
