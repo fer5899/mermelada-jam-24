@@ -114,7 +114,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
         poolChoosen = poolSize[poolChoosen];
 
         //ADD CARDS TO THE POOL
-        for (int i = poolBehind; i <= poolChoosen; i++)
+        for (int i = poolBehind + 1; i <= poolChoosen; i++)
         {
             pool.Add(upgradeProgression[i]);
         }
