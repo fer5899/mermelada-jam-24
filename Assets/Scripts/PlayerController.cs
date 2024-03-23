@@ -15,6 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     public IntVariableSO playerWeakStatusCounter;
     public IntVariableSO playerGainManaStatusCounter;
     public IntVariableSO playerLoseManaStatusCounter;
+    public SpriteRenderer playerImg;
 
     public void OnEnable()
     {
@@ -45,6 +46,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             gameManager.EndCombat();
         }
+        StartCoroutine(FeedbackDamaged());
     }
 
     public void GainMana(int mana)
@@ -67,6 +69,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             playerHealth.SetValue(playerHealth.DefaultValue);
         }
+        StartCoroutine(CureRutine());
     }
 
     public void GainBlock(int block)
@@ -127,5 +130,34 @@ public class PlayerController : Singleton<PlayerController>
             LoseMana(1);
         }
     }
+    
+    private IEnumerator FeedbackDamaged()
+    {
+        yield return new WaitForSeconds(0.1f);
+        TurnRed();
+        yield return new WaitForSeconds(0.2f);
+        TurnWhite();
+    }
 
+    private IEnumerator CureRutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        TurnGreen();
+        yield return new WaitForSeconds(0.2f);
+        TurnWhite();
+    }
+
+    private void TurnWhite()
+    {
+        playerImg.color = Color.white;
+    }
+
+    private void TurnRed()
+    {
+        playerImg.color = Color.red;
+    }
+        private void TurnGreen()
+    {
+        playerImg.color = Color.green;
+    }
 }
