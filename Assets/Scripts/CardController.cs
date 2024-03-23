@@ -6,18 +6,25 @@ using UnityEngine.UI;
 
 public class CardController : MonoBehaviour
 {
+    public GameManagerSO gameManager;
     public CardSO cardData;
+
+    public bool costsZeroMana = false;
 
     public Image image;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI description;
     public TextMeshProUGUI mana;
 
-    private Button button;
 
-    private void Awake()
+    public void OnEnable()
     {
-        button = GetComponent<Button>();
+        gameManager.OnTurnStart.AddListener(OnTurnStart);
+    }
+
+    public void OnDisable()
+    {
+        gameManager.OnTurnStart.RemoveListener(OnTurnStart);
     }
 
     public void LoadData(CardSO cardData)
@@ -32,12 +39,31 @@ public class CardController : MonoBehaviour
 
     public void PlayCard()
     {
-        TableController.Instance.PlayInTable(gameObject);
+        TableController.Instance.PlayInTable(gameObject, costsZeroMana);
     }
 
     public void DeactivateObject()
     {
         gameObject.SetActive(false);
     }
+
+    public void Update()
+    {
+        if (costsZeroMana)
+        {
+            mana.text = "0";
+        }
+        else
+        {
+            mana.text = cardData.cost.ToString();
+        }
+    }
+
+    public void OnTurnStart(int turn)
+    {
+        costsZeroMana = false;
+    }
+
+
 
 }

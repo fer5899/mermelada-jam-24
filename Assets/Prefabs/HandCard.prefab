@@ -613,7 +613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f78cd3b67ee42479e097d82bf100f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: 225a2619a3ab8a84189f2deb4336f66b, type: 2}
   cardData: {fileID: 0}
+  costsZeroMana: 0
   image: {fileID: 7977961688659580721}
   nameText: {fileID: 7977961688995413916}
   description: {fileID: 7977961688954702103}

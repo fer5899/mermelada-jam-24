@@ -84,13 +84,10 @@ public class TableController : Singleton<TableController>
                 CardSO drawnCard = drawPile[0];
                 drawPile.Remove(drawnCard);
                 card.SetActive(true);
-                if (costsZero)
-                {
-                    drawnCard.cost = 0;
-                }
                 CardController loadCard = card.GetComponent<CardController>();
                 loadCard.cardData = drawnCard;
                 loadCard.LoadData(drawnCard);
+                loadCard.costsZeroMana = costsZero;
                 return;
             }
         }
@@ -169,14 +166,15 @@ public class TableController : Singleton<TableController>
         //DebugList(drawPile);
     }
 
-    public void PlayInTable(GameObject card)
+    public void PlayInTable(GameObject card, bool costsZero = false)
     {
         CardSO cardData = card.GetComponent<CardController>().cardData;
         if (PlayerController.Instance.playerMana.Value < cardData.cost)
             return;
         DiscardCard(card);
         ExecuteCardActions(cardData);
-        PlayerController.Instance.LoseMana(cardData.cost);
+        if (!costsZero)
+            PlayerController.Instance.LoseMana(cardData.cost);
         Debug.Log("Card played: " + cardData.cardName);
     }
 
