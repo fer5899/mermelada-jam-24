@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 24
+      constantValue: 7
       variable: {fileID: 0}
       multiplier: 0
     repetition:
