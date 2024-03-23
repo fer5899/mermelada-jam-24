@@ -79,8 +79,10 @@ public class UpgradeManager : Singleton<UpgradeManager>
         bool exit = false;
         List<CardSO> pool = new List<CardSO>();
 
+        if (round < 0)
+            round = 0;
+        
         Debug.Log("Round = " + round);
-
         //FIND THE POOL
         for (int j = 0; j < poolRange.Length; j++)
         {

@@ -55,8 +55,8 @@ public class GameManagerSO : ScriptableObject
 
     public void StartCycle()
     {
-        OnCycleStart.Invoke(cycle);
         turn = 0;
+        OnCycleStart.Invoke(cycle);
     }
 
     public void EndCycle()
