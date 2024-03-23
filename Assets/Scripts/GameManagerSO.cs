@@ -109,6 +109,8 @@ public class GameManagerSO : ScriptableObject
     public void startGame()
     {
         cycle = 0;
+        turn = 0;
+        ResetDeck();
         loadScene("ImagenInicio");
     }
 
@@ -126,6 +128,15 @@ public class GameManagerSO : ScriptableObject
     {
         yield return new WaitForSeconds(4f);
         loadScene(scene);
+    }
+
+    public void ResetDeck()
+    {
+        playerDeck = new CardSO[defaultPlayerDeck.Length];
+        for (int i = 0; i < defaultPlayerDeck.Length; i++)
+        {
+            playerDeck[i] = defaultPlayerDeck[i];
+        }
     }
 
 }
