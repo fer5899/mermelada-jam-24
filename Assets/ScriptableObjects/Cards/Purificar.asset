@@ -20,10 +20,10 @@ MonoBehaviour:
   - actionType: 6
     executeIfStatusActive: {fileID: 0}
     amount:
-      useConstant: 1
-      constantValue: -100
-      variable: {fileID: 0}
-      multiplier: 0
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 11400000, guid: 3a186497c351c7f4e8b00858be8c116e, type: 2}
+      multiplier: -1
     repetition:
       useConstant: 0
       constantValue: 0

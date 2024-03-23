@@ -253,6 +253,7 @@ public class TableController : Singleton<TableController>
         {
             for (int i = 0; i < action.repetition.value; i++)
             {
+                Debug.Log("Repeating damage");
                 BossController.Instance.TakeDamage((int)Mathf.Ceil(bossTakenDamage));
             }
         }
@@ -292,6 +293,14 @@ public class TableController : Singleton<TableController>
         if (action.targetStatus != null)
         {
             action.targetStatus.AddAmount(action.amount.value);
+        }
+
+        if (action.repetition.value > 0)
+        {
+            for (int i = 0; i < action.repetition.value; i++)
+            {
+               action.targetStatus.AddAmount(action.amount.value);
+            }
         }
     }
 

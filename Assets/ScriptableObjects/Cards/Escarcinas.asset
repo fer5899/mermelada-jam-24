@@ -23,7 +23,7 @@ MonoBehaviour:
       useConstant: 0
       constantValue: 0
       variable: {fileID: 11400000, guid: 5545ba39c01343d40b7b2b9f53bdf1d5, type: 2}
-      multiplier: 2
+      multiplier: 1
     repetition:
       useConstant: 0
       constantValue: 0
