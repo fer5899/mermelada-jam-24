@@ -58,6 +58,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
     private void getRewardCards()
     {
         List<CardSO> pool = takePoolCards();
+        if (pool.Count <= 0)
+            return ;
         int randomCard1 = UnityEngine.Random.Range(0, pool.Count);
         int randomCard2;
         do
@@ -77,6 +79,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
         bool exit = false;
         List<CardSO> pool = new List<CardSO>();
 
+        Debug.Log("Round = " + round);
+
         //FIND THE POOL
         for (int j = 0; j < poolRange.Length; j++)
         {
@@ -85,7 +89,8 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 if (round == i)
                 {
                     poolChoosen = j;
-                    poolBehind = j - 1;
+                    if (j != 0)
+                        poolBehind = j - 1;
                     exit = true;
                     break;
                 }
@@ -95,8 +100,12 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 break;
         }
 
+        Debug.Log("Pool Choosen = " + poolChoosen);
+        Debug.Log("Pool Behind = " + poolBehind);
+        if (poolChoosen > poolRange.Length)
+            return null;
         //FIND STARTING CARD
-        if (poolBehind >= 0)
+        if (poolBehind > 0)
         {
             poolBehind = poolSize[poolBehind];
         }
