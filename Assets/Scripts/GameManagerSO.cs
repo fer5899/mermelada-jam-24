@@ -109,12 +109,17 @@ public class GameManagerSO : ScriptableObject
         loadScene("ImagenFinal1");
     }
 
-    public void startGame()
+    public void StartGame()
     {
         cycle = 0;
         turn = 0;
         ResetDeck();
         loadScene("ImagenInicio");
+    }
+
+    public void OpenCredits()
+    {
+        loadScene("Credits");
     }
 
     public void exitGame()
