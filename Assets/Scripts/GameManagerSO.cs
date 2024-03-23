@@ -33,6 +33,8 @@ public class GameManagerSO : ScriptableObject
     public UnityEvent OnUpgradeEnd;
     [System.NonSerialized]
     public UnityEvent OnEndGame;
+    [System.NonSerialized]
+    public UnityEvent OnPlayerDeath;
 
     public void OnEnable()
     {
@@ -47,6 +49,7 @@ public class GameManagerSO : ScriptableObject
         OnEndGame ??= new UnityEvent();
         OnUpgradeStart ??= new UnityEvent();
         OnUpgradeEnd ??= new UnityEvent();
+        OnPlayerDeath ??= new UnityEvent();
         // Copy all the default cards to the player deck
         playerDeck = new CardSO[defaultPlayerDeck.Length];
         for (int i = 0; i < defaultPlayerDeck.Length; i++)
@@ -153,6 +156,11 @@ public class GameManagerSO : ScriptableObject
         {
             resetVariables[i].ResetValue();
         }
+    }
+
+    public void PlayerDies()
+    {
+        OnPlayerDeath.Invoke();
     }
 
 }

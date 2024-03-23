@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -15,6 +16,7 @@ public class PlayerController : Singleton<PlayerController>
     public IntVariableSO playerWeakStatusCounter;
     public IntVariableSO playerGainManaStatusCounter;
     public IntVariableSO playerLoseManaStatusCounter;
+
 
     public void OnEnable()
     {
@@ -43,8 +45,15 @@ public class PlayerController : Singleton<PlayerController>
         playerHealth.AddAmount(-damage);
         if (playerHealth.Value <= 0)
         {
-            gameManager.EndCombat();
+            gameManager.PlayerDies();
+            StartCoroutine(WaitAfterDeath());
         }
+    }
+
+    public IEnumerator WaitAfterDeath()
+    {
+        yield return new WaitForSeconds(3);
+        gameManager.EndCombat();
     }
 
     public void GainMana(int mana)
