@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: MovimientoPreciso
   m_EditorClassIdentifier: 
   cardName: Movimiento preciso
-  cardDescription: "Bloquea 4 de da\xF1o. Haz 5 de da\xF1o."
+  cardDescription: "Bloquea 3 de da\xF1o. Haz 3 de da\xF1o."
   cardImage: {fileID: 21300000, guid: 00fdca6cf465e094899e70cec2fbd5f3, type: 3}
-  cost: 2
+  cost: 1
   cardActions:
   - actionType: 2
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 4
+      constantValue: 3
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -35,7 +35,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 3
       variable: {fileID: 0}
       multiplier: 0
     repetition:

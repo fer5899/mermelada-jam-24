@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Rumiar
   cardDescription: "Bloquea 6 de da\xF1o. Aumenta la furia en 2 puntos."
   cardImage: {fileID: 21300000, guid: 8f7773ad671e53d4798f74ed216b3063, type: 3}
-  cost: 0
+  cost: 1
   cardActions:
   - actionType: 2
     executeIfStatusActive: {fileID: 0}

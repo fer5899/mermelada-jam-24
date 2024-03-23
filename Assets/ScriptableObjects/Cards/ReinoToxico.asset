@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ReinoToxico
   m_EditorClassIdentifier: 
   cardName: "Reino T\xF3xico"
-  cardDescription: Triplica el veneno.
+  cardDescription: Duplica el veneno
   cardImage: {fileID: 21300000, guid: d3757e479a6891e49954bec69f925994, type: 3}
-  cost: 0
+  cost: 3
   cardActions:
   - actionType: 6
     executeIfStatusActive: {fileID: 0}

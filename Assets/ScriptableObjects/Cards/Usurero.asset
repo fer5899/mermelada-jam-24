@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Usurero
   cardDescription: Aplica 2 de veneno. Roba una carta al azar.
   cardImage: {fileID: 21300000, guid: 6908bb4b3a5bd1f4ba7ee289cbf3df98, type: 3}
-  cost: 2
+  cost: 1
   cardActions:
   - actionType: 6
     executeIfStatusActive: {fileID: 0}
