@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f441c9ea5252e49a70b53fdf82224d, type: 3}
   m_Name: Escarcinas
   m_EditorClassIdentifier: 
-  cardName: Esparcinas
+  cardName: Escarcinas
   cardDescription: Duplica tus espinas.
   cardImage: {fileID: 21300000, guid: dbf3e7c8f1c2fae4daaf77544eed7765, type: 3}
   cost: 2
