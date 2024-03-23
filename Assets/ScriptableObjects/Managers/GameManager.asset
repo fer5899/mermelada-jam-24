@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   cycle: 5
-  turn: 2
+  turn: 0
   playerDeck:
   - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
   - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
@@ -40,3 +40,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db348df768803764a8d329ef51c2209d, type: 2}
   - {fileID: 11400000, guid: e2f2b0784ea72ae41995273cc3114923, type: 2}
   - {fileID: 11400000, guid: ed74b1647d962214ba88e9a209225fe4, type: 2}
+  resetVariables:
+  - {fileID: 11400000, guid: e88b000aba533a34eae6e304d1118b73, type: 2}
+  - {fileID: 11400000, guid: de347d785d88e6848af1d5816b4eae48, type: 2}
+  - {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}
+  - {fileID: 11400000, guid: 3b9c8b9e410f3e54ba8cebb601fd4e9e, type: 2}
+  - {fileID: 11400000, guid: 74cb0249ab18ce447a4e15f5973c4605, type: 2}
+  - {fileID: 11400000, guid: 83d21b71ff4ca3a48a2bd2af2aa41aac, type: 2}
+  - {fileID: 11400000, guid: 13c14bc3d2152a546a733e935389a376, type: 2}
+  - {fileID: 11400000, guid: 799f689a7f581c448895e2a62bded8ee, type: 2}
+  - {fileID: 11400000, guid: 64bf90452d8e2574793152b4af88f9f5, type: 2}
+  - {fileID: 11400000, guid: 4187a934e83c2ba44a48a232ddb3e353, type: 2}
+  - {fileID: 11400000, guid: 9029df258105fbb44b9e0e614105dc85, type: 2}
+  - {fileID: 11400000, guid: 3ce2a2390a8a8a84295886feec6b2904, type: 2}
+  - {fileID: 11400000, guid: 5545ba39c01343d40b7b2b9f53bdf1d5, type: 2}
+  - {fileID: 11400000, guid: 3a186497c351c7f4e8b00858be8c116e, type: 2}

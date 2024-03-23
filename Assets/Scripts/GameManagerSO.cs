@@ -13,6 +13,8 @@ public class GameManagerSO : ScriptableObject
 
     public CardSO[] defaultPlayerDeck;
 
+    public IntVariableSO[] resetVariables;
+
     [System.NonSerialized]
     public UnityEvent<int> OnCycleStart;
     [System.NonSerialized]
@@ -81,6 +83,7 @@ public class GameManagerSO : ScriptableObject
     public void StartCombat()
     {
         OnCombatStart.Invoke();
+        ResetVariables();
     }
 
     public void EndCombat()
@@ -136,6 +139,14 @@ public class GameManagerSO : ScriptableObject
         for (int i = 0; i < defaultPlayerDeck.Length; i++)
         {
             playerDeck[i] = defaultPlayerDeck[i];
+        }
+    }
+
+    public void ResetVariables()
+    {
+        for (int i = 0; i < resetVariables.Length; i++)
+        {
+            resetVariables[i].ResetValue();
         }
     }
 
