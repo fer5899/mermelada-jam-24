@@ -16,7 +16,7 @@ MonoBehaviour:
   cardDescription: "Bloquea 4 de da\xF1o. Roba 1 carta de la mano al azar, su coste
     es 0 este turno."
   cardImage: {fileID: 0}
-  cost: 0
+  cost: 1
   cardActions:
   - actionType: 2
     executeIfStatusActive: {fileID: 0}
