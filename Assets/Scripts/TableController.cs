@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Rendering;
 
 public class TableController : Singleton<TableController>
 {
@@ -14,6 +15,9 @@ public class TableController : Singleton<TableController>
     public GameObject[] hand;
     public List<CardSO> discardPile;
     public IntVariableSO discardPileSize, drawPileSize;
+    public SpriteRenderer playerImg;
+    private Vector3 initPos;
+    public float speed;
 
     public void OnEnable()
     {
@@ -31,6 +35,7 @@ public class TableController : Singleton<TableController>
 
     public void Start()
     {
+        initPos = playerImg.transform.localPosition;
         LoadHand();
         gameManager.StartCycle();
     }
@@ -190,6 +195,7 @@ public class TableController : Singleton<TableController>
             {
                 case CardAction.ActionType.damage:
                     DealDamage(action);
+                    StartCoroutine(FeedbackDamaged());
                     break;
                 case CardAction.ActionType.heal:
                     Heal(action);
@@ -311,4 +317,19 @@ public class TableController : Singleton<TableController>
         }
     }
 
+    private IEnumerator FeedbackDamaged()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Movement();
+        yield return new WaitForSeconds(0.2f);
+        ResetPos();
+        
+    }
+
+    public void Movement() {
+        playerImg.transform.position -= Vector3.left * speed;
+    }
+    public void ResetPos() {
+        playerImg.transform.position = initPos;
+    }
 }
