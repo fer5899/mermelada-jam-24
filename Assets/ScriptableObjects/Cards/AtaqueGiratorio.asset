@@ -13,22 +13,21 @@ MonoBehaviour:
   m_Name: AtaqueGiratorio
   m_EditorClassIdentifier: 
   cardName: Ataque Giratorio
-  cardDescription: "Haz 7 de da\xF1o. Golpea tantas veces como puntos de man\xE1
-    tengas."
+  cardDescription: "Haz 7 de da\xF1o. Repite tantas veces como debilidad tengas."
   cardImage: {fileID: 21300000, guid: 606db732f48f4d041a6bdb0702abee1f, type: 3}
-  cost: 0
+  cost: 2
   cardActions:
   - actionType: 0
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 7
+      constantValue: 24
       variable: {fileID: 0}
       multiplier: 0
     repetition:
       useConstant: 0
       constantValue: 0
-      variable: {fileID: 11400000, guid: 3ce2a2390a8a8a84295886feec6b2904, type: 2}
+      variable: {fileID: 11400000, guid: 3a186497c351c7f4e8b00858be8c116e, type: 2}
       multiplier: 1
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
