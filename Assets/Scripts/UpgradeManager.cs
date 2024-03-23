@@ -57,56 +57,58 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     private void getRewardCards()
     {
-        CardSO[] poolCardsChoosen = takePoolCards();
-        int randomCard1 = UnityEngine.Random.Range(0, poolCardsChoosen.Length);
+        List<CardSO> pool = takePoolCards();
+        int randomCard1 = UnityEngine.Random.Range(0, pool.Count);
         int randomCard2;
         do
-            randomCard2 = UnityEngine.Random.Range(0, poolCardsChoosen.Length);
+            randomCard2 = UnityEngine.Random.Range(0, pool.Count);
         while (randomCard2 == randomCard1);
     
-        upgradeCardLoaders[0].LoadCard(poolCardsChoosen[randomCard1]);
-        upgradeCardLoaders[1].LoadCard(poolCardsChoosen[randomCard2]);
+        upgradeCardLoaders[0].LoadCard(pool[randomCard1]);
+        upgradeCardLoaders[1].LoadCard(pool[randomCard2]);
     }
 
-    private CardSO[] takePoolCards()
+    private List<CardSO> takePoolCards()
     {
         int round = startRound - gameManager.cycle + gameManager.turn;
         int poolChoosen = 0;
-        int startCard = 0;
-        CardSO[] cardsPool;
+        int poolBehind = 0;
+        int start = 0;
+        bool exit = false;
+        List<CardSO> pool = new List<CardSO>();
 
-        //GET THE RANGE WHERE IS THE POOL OF THE REWARD
+        //FIND THE POOL
         for (int j = 0; j < poolRange.Length; j++)
         {
-            for (int i = poolRange[j]; i > 0; i--)
+            for (int i = start; i <= poolRange[j]; i++)
             {
-                if (round == 0)
+                if (round == i)
+                {
                     poolChoosen = j;
-               
-                round--;
+                    poolBehind = j - 1;
+                    exit = true;
+                    break;
+                }
+                start++;
             }
-            if (round <= 0)
+            if (exit)
                 break;
         }
 
-        //ADD SIZE TO POOL ARRAY
-        cardsPool = new CardSO[poolSize[poolChoosen]];
-        //GET THE STARTING ARRAY OF THE POOL
-        for (int i = 0; i < poolChoosen; i++)
+        //FIND STARTING CARD
+        if (poolBehind >= 0)
         {
-            for (int j = 0; j < poolSize[i]; j++)
-            {
-                startCard++;
-            }
+            poolBehind = poolSize[poolBehind];
+        }
+        poolChoosen = poolSize[poolChoosen];
+
+        //ADD CARDS TO THE POOL
+        for (int i = poolBehind; i <= poolChoosen; i++)
+        {
+            pool.Add(upgradeProgression[i]);
         }
 
-        //GET THE CARDS OF THE ARRAY OF CARDS TO INTRODUCE IN THE CARD OF THE POOL
-        for (int i = 0; i < cardsPool.Length; i++)
-        {
-            cardsPool[i] = upgradeProgression[i + startCard];
-        }
-
-        return cardsPool;
+        return pool;
         
     }
 

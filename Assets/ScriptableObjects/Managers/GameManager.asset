@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   cycle: 0
-  turn: 3
+  turn: 17
   playerDeck:
   - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
   - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
