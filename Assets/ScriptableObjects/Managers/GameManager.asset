@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76dc67235c5a3b4ea06adf8c65d3c6a, type: 3}
   m_Name: GameManager
   m_EditorClassIdentifier: 
-  cycle: 0
-  turn: 17
+  cycle: 5
+  turn: 2
   playerDeck:
   - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
   - {fileID: 11400000, guid: 0e9871451936c7246a9179a603b1654f, type: 2}
