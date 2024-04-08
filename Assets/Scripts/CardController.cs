@@ -21,12 +21,14 @@ public class CardController : MonoBehaviour
     {
         gameManager.OnTurnStart.AddListener(OnTurnStart);
         gameManager.OnPlayerDeath.AddListener(DisableInteractivity);
+        gameManager.OnBossDeath.AddListener(DisableInteractivity);
     }
 
     public void OnDisable()
     {
         gameManager.OnTurnStart.RemoveListener(OnTurnStart);
         gameManager.OnPlayerDeath.RemoveListener(DisableInteractivity);
+        gameManager.OnBossDeath.RemoveListener(DisableInteractivity);
     }
 
     public void LoadData(CardSO cardData)

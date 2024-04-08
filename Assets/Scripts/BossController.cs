@@ -72,10 +72,18 @@ public class BossController : Singleton<BossController>
         bossHealth.AddAmount(-damage);
         if (bossHealth.Value <= 0)
         {
-            gameManager.EndGame();
+            gameManager.BossDies();
+            StartCoroutine(WaitAfterBossDeath());
         }
         StartCoroutine(FeedbackDamaged());
     }
+
+    public IEnumerator WaitAfterBossDeath()
+    {
+        yield return new WaitForSeconds(4);
+        gameManager.EndGame();
+    }
+
 
 
     public void Heal(int amount)

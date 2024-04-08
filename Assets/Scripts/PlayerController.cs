@@ -54,7 +54,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public IEnumerator WaitAfterDeath()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         gameManager.EndCombat();
     }
 

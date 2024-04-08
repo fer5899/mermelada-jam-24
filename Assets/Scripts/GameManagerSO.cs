@@ -36,6 +36,8 @@ public class GameManagerSO : ScriptableObject
     [System.NonSerialized]
     public UnityEvent OnPlayerDeath;
     [System.NonSerialized]
+    public UnityEvent OnBossDeath;
+    [System.NonSerialized]
     public UnityEvent<string> onBossAttack;
 
     public void OnEnable()
@@ -52,6 +54,7 @@ public class GameManagerSO : ScriptableObject
         OnUpgradeStart ??= new UnityEvent();
         OnUpgradeEnd ??= new UnityEvent();
         OnPlayerDeath ??= new UnityEvent();
+        OnBossDeath ??= new UnityEvent();
         onBossAttack ??= new UnityEvent<string>();
         // Copy all the default cards to the player deck
         playerDeck = new CardSO[defaultPlayerDeck.Length];
@@ -164,6 +167,11 @@ public class GameManagerSO : ScriptableObject
     public void PlayerDies()
     {
         OnPlayerDeath.Invoke();
+    }
+
+    public void BossDies()
+    {
+        OnBossDeath.Invoke();
     }
 
     public void BossAttack(string attackInfo)

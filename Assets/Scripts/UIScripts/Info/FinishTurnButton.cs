@@ -11,11 +11,13 @@ public class FinishTurnButton : MonoBehaviour
     public void OnEnable()
     {
         gameManager.OnPlayerDeath.AddListener(DisableInteractivity);
+        gameManager.OnBossDeath.AddListener(DisableInteractivity);
     }
 
     public void OnDisable()
     {
         gameManager.OnPlayerDeath.RemoveListener(DisableInteractivity);
+        gameManager.OnBossDeath.RemoveListener(DisableInteractivity);
     }
 
     public void Start()
