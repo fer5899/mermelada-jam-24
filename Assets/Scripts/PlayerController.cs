@@ -17,6 +17,7 @@ public class PlayerController : Singleton<PlayerController>
     public IntVariableSO playerGainManaStatusCounter;
     public IntVariableSO playerLoseManaStatusCounter;
     public SpriteRenderer playerImg;
+    public Animator      playerAnimator;
 
 
     public void OnEnable()
@@ -46,6 +47,7 @@ public class PlayerController : Singleton<PlayerController>
         playerHealth.AddAmount(-damage);
         if (playerHealth.Value <= 0)
         {
+            playerAnimator.SetBool("DeadBool", true);
             gameManager.PlayerDies();
             StartCoroutine(WaitAfterDeath());
         }
