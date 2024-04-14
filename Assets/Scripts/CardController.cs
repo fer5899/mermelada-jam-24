@@ -15,7 +15,7 @@ public class CardController : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI description;
     public TextMeshProUGUI mana;
-
+    private CanvasGroup canvasGroup;
 
     public void OnEnable()
     {
@@ -78,5 +78,4 @@ public class CardController : MonoBehaviour
     {
         GetComponent<Button>().interactable = false;
     }
-
 }

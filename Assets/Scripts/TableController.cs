@@ -89,6 +89,11 @@ public class TableController : Singleton<TableController>
                 CardSO drawnCard = drawPile[0];
                 drawPile.Remove(drawnCard);
                 card.SetActive(true);
+
+                CanvasGroup canvasGroup = card.GetComponent<CanvasGroup>();
+                if (canvasGroup != null)
+                canvasGroup.alpha = 1;
+
                 CardController loadCard = card.GetComponent<CardController>();
                 loadCard.cardData = drawnCard;
                 loadCard.LoadData(drawnCard);
@@ -139,7 +144,12 @@ public class TableController : Singleton<TableController>
     public void DiscardCard(GameObject card)
     {
        AddToDiscardPile(card.GetComponent<CardController>().cardData);
-       card.SetActive(false);
+        CanvasGroup canvasGroup = card.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = card.AddComponent<CanvasGroup>();
+        StartCoroutine(FadeOut(canvasGroup));
+        StartCoroutine(DeactivateCardAfterFadeOut(card, canvasGroup));
+       //card.SetActive(false);
     }
 
     public void DiscardRandomCard()
@@ -176,6 +186,8 @@ public class TableController : Singleton<TableController>
         CardSO cardData = card.GetComponent<CardController>().cardData;
         if (PlayerController.Instance.playerMana.Value < cardData.cost)
             return;
+
+
         DiscardCard(card);
         ExecuteCardActions(cardData);
         if (!costsZero)
@@ -338,5 +350,24 @@ public class TableController : Singleton<TableController>
     }
     public void ResetPos() {
         playerImg.transform.position = initPos;
+    }
+
+    private IEnumerator FadeOut(CanvasGroup canvasGroup)
+    {
+        Debug.Log("FadeOut-------------------");
+        while (canvasGroup.alpha > 0)
+        {
+            canvasGroup.alpha -= Time.deltaTime * 2;
+            yield return null;
+        }
+    }
+    private IEnumerator DeactivateCardAfterFadeOut(GameObject card, CanvasGroup canvasGroup)
+    {
+        while (canvasGroup.alpha > 0)
+        {
+            yield return null;
+        }
+
+        card.SetActive(false);
     }
 }
