@@ -20,11 +20,15 @@ public class CardController : MonoBehaviour
     public void OnEnable()
     {
         gameManager.OnTurnStart.AddListener(OnTurnStart);
+        gameManager.OnPlayerDeath.AddListener(DisableInteractivity);
+        gameManager.OnBossDeath.AddListener(DisableInteractivity);
     }
 
     public void OnDisable()
     {
         gameManager.OnTurnStart.RemoveListener(OnTurnStart);
+        gameManager.OnPlayerDeath.RemoveListener(DisableInteractivity);
+        gameManager.OnBossDeath.RemoveListener(DisableInteractivity);
     }
 
     public void LoadData(CardSO cardData)
@@ -47,6 +51,12 @@ public class CardController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void Start()
+    {
+        costsZeroMana = false;
+        GetComponent<Button>().interactable = true;
+    }
+
     public void Update()
     {
         if (costsZeroMana)
@@ -64,6 +74,9 @@ public class CardController : MonoBehaviour
         costsZeroMana = false;
     }
 
-
+    public void DisableInteractivity()
+    {
+        GetComponent<Button>().interactable = false;
+    }
 
 }

@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: 225a2619a3ab8a84189f2deb4336f66b, type: 2}
+  sceneToLoad: ImagenFinal2
+  waitTime: 4
 --- !u!4 &389288369
 Transform:
   m_ObjectHideFlags: 0

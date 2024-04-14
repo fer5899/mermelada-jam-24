@@ -33,6 +33,12 @@ public class GameManagerSO : ScriptableObject
     public UnityEvent OnUpgradeEnd;
     [System.NonSerialized]
     public UnityEvent OnEndGame;
+    [System.NonSerialized]
+    public UnityEvent OnPlayerDeath;
+    [System.NonSerialized]
+    public UnityEvent OnBossDeath;
+    [System.NonSerialized]
+    public UnityEvent<string> onBossAttack;
 
     public void OnEnable()
     {
@@ -47,6 +53,9 @@ public class GameManagerSO : ScriptableObject
         OnEndGame ??= new UnityEvent();
         OnUpgradeStart ??= new UnityEvent();
         OnUpgradeEnd ??= new UnityEvent();
+        OnPlayerDeath ??= new UnityEvent();
+        OnBossDeath ??= new UnityEvent();
+        onBossAttack ??= new UnityEvent<string>();
         // Copy all the default cards to the player deck
         playerDeck = new CardSO[defaultPlayerDeck.Length];
         for (int i = 0; i < defaultPlayerDeck.Length; i++)
@@ -89,7 +98,7 @@ public class GameManagerSO : ScriptableObject
     public void EndCombat()
     {
         OnCombatEnd.Invoke();
-        loadScene("PabloScene");
+        loadScene("ImagenMuertePlayer");
     }
 
     public void StartUpgrade()
@@ -109,12 +118,17 @@ public class GameManagerSO : ScriptableObject
         loadScene("ImagenFinal1");
     }
 
-    public void startGame()
+    public void StartGame()
     {
         cycle = 0;
         turn = 0;
         ResetDeck();
         loadScene("ImagenInicio");
+    }
+
+    public void OpenCredits()
+    {
+        loadScene("Credits");
     }
 
     public void exitGame()
@@ -127,9 +141,9 @@ public class GameManagerSO : ScriptableObject
         SceneManager.LoadScene(scene);
     }
 
-    public IEnumerator MyCoroutine(string scene)
+    public IEnumerator WaitAndLoadScene(string scene, float time)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(time);
         loadScene(scene);
     }
 
@@ -148,6 +162,21 @@ public class GameManagerSO : ScriptableObject
         {
             resetVariables[i].ResetValue();
         }
+    }
+
+    public void PlayerDies()
+    {
+        OnPlayerDeath.Invoke();
+    }
+
+    public void BossDies()
+    {
+        OnBossDeath.Invoke();
+    }
+
+    public void BossAttack(string attackInfo)
+    {
+        onBossAttack.Invoke(attackInfo);
     }
 
 }

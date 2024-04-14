@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.Events;
 
 public class BossController : Singleton<BossController>
 {
@@ -47,8 +48,6 @@ public class BossController : Singleton<BossController>
         BossAttack.requiem,
     };
 
-    public TextMeshProUGUI bossAttackText;
-
     public void OnEnable()
     {
         gameManager.OnTurnStart.AddListener(OnStartTurn);
@@ -73,10 +72,18 @@ public class BossController : Singleton<BossController>
         bossHealth.AddAmount(-damage);
         if (bossHealth.Value <= 0)
         {
-            gameManager.EndGame();
+            gameManager.BossDies();
+            StartCoroutine(WaitAfterBossDeath());
         }
         StartCoroutine(FeedbackDamaged());
     }
+
+    public IEnumerator WaitAfterBossDeath()
+    {
+        yield return new WaitForSeconds(4);
+        gameManager.EndGame();
+    }
+
 
 
     public void Heal(int amount)
@@ -167,7 +174,6 @@ public class BossController : Singleton<BossController>
 
     }
 
-
     public void OnStartTurn(int turn)
     {
         ExecuteStatuses();
@@ -192,14 +198,14 @@ public class BossController : Singleton<BossController>
 
     public void GarraUmbria()
     {
-        bossAttackText.text = "El Profundo usó Garra Umbría\n(16 de daño)";
+        gameManager.BossAttack("El Profundo usó Garra Umbría\n(16 de daño)");
         DealDamage(16);
         cameraShake.ShakeCamera(0.5f, 1f);
     }
 
     public void Embestida()
     {
-        bossAttackText.text = "El Profundo usó Embestida\n(10 de daño, 1 de debilidad)";
+        gameManager.BossAttack("El Profundo usó Embestida\n(10 de daño, 1 de debilidad)");
         DealDamage(10);
         PlayerController.Instance.GainWeak(2);
         cameraShake.ShakeCamera(0.3f, 0.5f);
@@ -207,12 +213,12 @@ public class BossController : Singleton<BossController>
 
     public void Reposo()
     {
-        bossAttackText.text = "El Profundo te observa amenazante";
+        gameManager.BossAttack("El Profundo te observa amenazante");
     }
 
     public void Rencor()
     {
-        bossAttackText.text = "El Profundo usó Rencor\n(6 de daño, 1 de maná perdido)";
+        gameManager.BossAttack("El Profundo usó Rencor\n(6 de daño, 1 de maná perdido)");
         DealDamage(6);
         PlayerController.Instance.GainLoseManaStatus(1);
         cameraShake.ShakeCamera(0.1f, 0.3f);
@@ -220,35 +226,33 @@ public class BossController : Singleton<BossController>
 
     public void Carga()
     {
-        bossAttackText.text = "El Profundo se prepara para atacar";
-        DealDamage(20);
-        cameraShake.ShakeCamera(0.5f, 1f);
+        gameManager.BossAttack("El Profundo se prepara para atacar");
     }
 
     public void RayoOscuro()
     {
-        bossAttackText.text = "El Profundo usó Rayo Oscuro\n(25 de daño)";
+        gameManager.BossAttack("El Profundo usó Rayo Oscuro\n(25 de daño)");
         DealDamage(25);
         cameraShake.ShakeCamera(0.5f, 1f);
     }
 
     public void GritoAterrador()
     {
-        bossAttackText.text = "El Profundo usó Grito Aterrador\n(3 de debilidad)";
+        gameManager.BossAttack("El Profundo usó Grito Aterrador\n(3 de debilidad)");
         PlayerController.Instance.GainWeak(4);
         cameraShake.ShakeCamera(0.5f, 1f);
     }
 
     public void Curacion()
     {
-        bossAttackText.text = "El Profundo usó Curación\n(15 de curación)";
+        gameManager.BossAttack("El Profundo usó Curación\n(15 de curación)");
         Heal(15);
         StartCoroutine(CureRutine());
     }
 
     public void Requiem()
     {
-        bossAttackText.text = "El Profundo usó Requiem\n(10000 de daño)";
+        gameManager.BossAttack("El Profundo usó Requiem\n(10000 de daño)");
         DealDamage(10000);
         cameraShake.ShakeCamera(1f, 5f);
     }
