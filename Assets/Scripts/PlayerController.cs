@@ -44,6 +44,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void TakeDamage(int damage)
     {
+        gameManager.PlayerGetDamage();
         playerHealth.AddAmount(-damage);
         if (playerHealth.Value <= 0)
         {
@@ -85,6 +86,8 @@ public class PlayerController : Singleton<PlayerController>
 
     public void GainBlock(int block)
     {
+        Debug.Log("Se ejectua el escudo");
+        gameManager.PlayerGainBlock();
         playerBlock.AddAmount(block);
     }
 
@@ -95,6 +98,8 @@ public class PlayerController : Singleton<PlayerController>
 
     public void GainThorns(int thorns)
     {
+        Debug.Log("Se ejectua la furia");
+        gameManager.PlayerGainFury();
         playerThornsStatusCounter.AddAmount(thorns);
     }
 

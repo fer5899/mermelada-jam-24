@@ -116,7 +116,6 @@ public class TableController : Singleton<TableController>
     {
         int n = list.Count;
         System.Random rng = new System.Random();
-
         for (int i = n - 1; i > 0; i--)
         {
             // generar indice aleatorio entre 0 e i
@@ -332,6 +331,7 @@ public class TableController : Singleton<TableController>
     {
         for (int i = 0; i < action.amount.value; i++)
         {
+            gameManager.DiscardCard();
             DiscardRandomCard();
         }
     }

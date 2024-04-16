@@ -38,7 +38,23 @@ public class GameManagerSO : ScriptableObject
     [System.NonSerialized]
     public UnityEvent OnBossDeath;
     [System.NonSerialized]
+    public UnityEvent onPlayerAttack;
+    [System.NonSerialized]
     public UnityEvent<string> onBossAttack;
+    [System.NonSerialized]
+    public UnityEvent OnPlayerBlock;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGetDamage;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGainFury;
+    [System.NonSerialized]
+    public UnityEvent onDiscardCard;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGainBlock;
+    [System.NonSerialized]
+    public UnityEvent onSelectCard;
+    [System.NonSerialized]
+    public UnityEvent onButtonSelect;
 
     public void OnEnable()
     {
@@ -56,6 +72,14 @@ public class GameManagerSO : ScriptableObject
         OnPlayerDeath ??= new UnityEvent();
         OnBossDeath ??= new UnityEvent();
         onBossAttack ??= new UnityEvent<string>();
+        onPlayerAttack ??= new UnityEvent();
+        OnPlayerBlock ??= new UnityEvent();
+        onPlayerGetDamage ??= new UnityEvent();
+        onDiscardCard ??= new UnityEvent();
+        onPlayerGainBlock ??= new UnityEvent();
+        onPlayerGainFury ??= new UnityEvent();
+        onSelectCard ??= new UnityEvent();
+        onButtonSelect ??= new UnityEvent();
         // Copy all the default cards to the player deck
         playerDeck = new CardSO[defaultPlayerDeck.Length];
         for (int i = 0; i < defaultPlayerDeck.Length; i++)
@@ -89,6 +113,16 @@ public class GameManagerSO : ScriptableObject
         StartTurn();
     }
 
+    public void PlayerGainFury()
+    {
+        onPlayerGainFury.Invoke();
+    }
+
+    public void DiscardCard()
+    {
+        onDiscardCard.Invoke();
+    }
+
     public void StartCombat()
     {
         OnCombatStart.Invoke();
@@ -106,13 +140,29 @@ public class GameManagerSO : ScriptableObject
         OnUpgradeStart.Invoke();
     }
 
+    public void PlayerGainBlock()
+    {
+        onPlayerGainBlock.Invoke();
+    }
+
+    public void SelectCard()
+    {
+        onSelectCard.Invoke();
+    }
+
     public void EndUpgrade()
     {
         OnUpgradeEnd.Invoke();
     }
 
+    public void ButtonSelect()
+    {
+        onButtonSelect.Invoke();
+    }
+
     public void EndGame()
     {
+        ButtonSelect();
         OnEndGame.Invoke();
         cycle = 0;
         loadScene("ImagenFinal1");
@@ -122,12 +172,14 @@ public class GameManagerSO : ScriptableObject
     {
         cycle = 0;
         turn = 0;
+        ButtonSelect();
         ResetDeck();
         loadScene("ImagenInicio");
     }
 
     public void OpenCredits()
     {
+        ButtonSelect();
         loadScene("Credits");
     }
 
@@ -177,6 +229,21 @@ public class GameManagerSO : ScriptableObject
     public void BossAttack(string attackInfo)
     {
         onBossAttack.Invoke(attackInfo);
+    }
+
+    public void PlayerGetDamage()
+    {
+        onPlayerGetDamage.Invoke();
+    }
+
+    public void PlayerAttack()
+    {
+        onPlayerAttack.Invoke();
+    }
+
+    public void PlayerBlock()
+    {
+        OnPlayerBlock.Invoke();
     }
 
 }

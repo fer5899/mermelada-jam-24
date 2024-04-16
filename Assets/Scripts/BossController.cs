@@ -69,6 +69,7 @@ public class BossController : Singleton<BossController>
 
     public void TakeDamage(int damage)
     {
+        gameManager.PlayerAttack();
         bossHealth.AddAmount(-damage);
         if (bossHealth.Value <= 0)
         {

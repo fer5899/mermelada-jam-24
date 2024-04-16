@@ -9,7 +9,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public AudioClip[] musicThemes;
     public AudioClip[] sounds;
-    public AudioSource audioSource;
+    public AudioSource audioSource; 
+    public AudioSource soundSource;
 
     public void Awake()
     {
@@ -33,12 +34,25 @@ public class AudioManager : MonoBehaviour
     {
         gameManager.OnCycleStart.AddListener(BattleTheme);
         gameManager.OnUpgradeStart.AddListener(MenuTheme);
+        gameManager.onPlayerAttack.AddListener(BossAttack);
+        gameManager.onPlayerGetDamage.AddListener(PlayerGetDamage);
+        gameManager.onDiscardCard.AddListener(discardCard);
+        gameManager.onPlayerGainBlock.AddListener(gainBlock);
+        gameManager.onPlayerGainFury.AddListener(gainFury);
+        gameManager.onSelectCard.AddListener(selectCard);
+        gameManager.onButtonSelect.AddListener(selectButton);
     }
 
     public void OnDisable()
     {
         gameManager.OnCycleStart.RemoveListener(BattleTheme);
-        gameManager.OnUpgradeStart.AddListener(MenuTheme);
+        gameManager.OnUpgradeStart.RemoveListener(MenuTheme);
+        gameManager.onPlayerAttack.RemoveListener(BossAttack);
+        gameManager.onPlayerGetDamage.RemoveListener(PlayerGetDamage);
+        gameManager.onDiscardCard.RemoveListener(discardCard);
+        gameManager.onPlayerGainBlock.RemoveListener(gainBlock);
+        gameManager.onSelectCard.RemoveListener(selectCard);
+        gameManager.onButtonSelect.RemoveListener(selectButton);
     }
 
     public void BattleTheme(int num)
@@ -50,6 +64,41 @@ public class AudioManager : MonoBehaviour
     {
         PlayMusic(0);
     }
+
+    public void BossAttack()
+    {
+        PlaySound(0);
+    }
+
+    public void PlayerGetDamage()
+    {
+        PlaySound(1);
+    }
+
+    public void gainBlock()
+    {
+        PlaySound(2);
+    }
+
+    public void discardCard()
+    {
+        PlaySound(3);
+    }
+
+    public void gainFury()
+    {
+        PlaySound(4);
+    }
+
+    public void selectCard()
+    {
+        PlaySound(5);
+    }
+    public void selectButton()
+    {
+        PlaySound(6);
+    }
+
 
     public void SetVolume(float volume)
     {
@@ -71,5 +120,15 @@ public class AudioManager : MonoBehaviour
         double volumeValue = 0.16; // Define volumeValue as double
         float floatValue = (float)volumeValue;
         SetVolume(floatValue);
+    }
+
+    public void PlaySound(int sound)
+    {
+        soundSource.clip = sounds[sound];
+        soundSource.Play();
+        soundSource.loop = false;
+        //double volumeValue = 0.16; // Define volumeValue as double
+        //float floatValue = (float)volumeValue;
+        //SetVolume(floatValue);
     }
 }

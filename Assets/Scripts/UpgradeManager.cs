@@ -125,6 +125,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     public void EndUpgrade()
     {
+        gameManager.ButtonSelect();
         gameManager.EndCycle();    
     }
 
@@ -146,11 +147,13 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     public void SetSelectedUpgradeCard(CardSO card)
     {
+        gameManager.SelectCard();
         selectedUpgradeCard = card;
     }
 
     public void SetSelectedDeckCard(CardSO card)
     {
+        gameManager.SelectCard();
         selectedDeckCard = card;
     }
 
