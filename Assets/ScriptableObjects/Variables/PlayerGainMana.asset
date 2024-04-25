@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1cb146ca3356a41847da890afab8e0, type: 3}
   m_Name: PlayerGainMana
   m_EditorClassIdentifier: 
+  variableName: PlayerGainMana
   value: 0
   defaultValue: 0

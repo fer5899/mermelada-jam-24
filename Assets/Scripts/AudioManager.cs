@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour
         gameManager.onPlayerGetDamage.RemoveListener(PlayerGetDamage);
         gameManager.onDiscardCard.RemoveListener(discardCard);
         gameManager.onPlayerGainBlock.RemoveListener(gainBlock);
+        gameManager.onPlayerGainFury.RemoveListener(gainFury);
         gameManager.onSelectCard.RemoveListener(selectCard);
         gameManager.onButtonSelect.RemoveListener(selectButton);
     }

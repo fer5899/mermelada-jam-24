@@ -94,11 +94,12 @@ public class PlayerController : Singleton<PlayerController>
     public void GainFury(int fury)
     {
         playerFuryStatusCounter.AddAmount(fury);
+        Debug.Log("Se ejecuta la furia");
+        gameManager.PlayerGainFury();
     }
 
     public void GainThorns(int thorns)
     {
-        Debug.Log("Se ejectua la furia");
         gameManager.PlayerGainFury();
         playerThornsStatusCounter.AddAmount(thorns);
     }

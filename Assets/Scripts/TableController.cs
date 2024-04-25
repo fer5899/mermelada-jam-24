@@ -308,6 +308,28 @@ public class TableController : Singleton<TableController>
         if (action.targetStatus != null)
         {
             action.targetStatus.AddAmount(action.amount.value);
+            switch (action.targetStatus.variableName)
+            {
+                case "PlayerFury":
+                    gameManager.PlayerGainFury();
+                    break;
+                // case "PlayerThorns":
+                //     gameManager.PlayerGainThorns();
+                //     break;
+                // case "PlayerWeak":
+                //     gameManager.PlayerGainWeak();
+                //     break;
+                // case "BossBleed":
+                //     gameManager.BossGainBleed();
+                //     break;
+                // case "BossPoison":
+                //     gameManager.BossGainPoison();
+                //     break;
+                // case "BossWeak":
+                //     gameManager.BossGainWeak();
+                //     break;
+
+            }
         }
 
         if (action.repetition.value > 0)

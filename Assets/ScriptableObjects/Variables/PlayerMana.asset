@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1cb146ca3356a41847da890afab8e0, type: 3}
   m_Name: PlayerMana
   m_EditorClassIdentifier: 
-  value: 0
+  variableName: PlayerMana
+  value: 3
   defaultValue: 3
-  OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []

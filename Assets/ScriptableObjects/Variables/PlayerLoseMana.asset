@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1cb146ca3356a41847da890afab8e0, type: 3}
   m_Name: PlayerLoseMana
   m_EditorClassIdentifier: 
+  variableName: PlayerLoseMana
   value: 0
   defaultValue: 0

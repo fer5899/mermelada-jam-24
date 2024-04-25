@@ -7,6 +7,8 @@ using UnityEngine.UIElements.Experimental;
 [CreateAssetMenu(fileName = "IntVariable", menuName = "IntVariable", order = 10)]
 public class IntVariableSO : ScriptableObject
 {
+    public string variableName;
+
     [SerializeField]
     private int value;
 
