@@ -52,6 +52,10 @@ public class GameManagerSO : ScriptableObject
     [System.NonSerialized]
     public UnityEvent onPlayerGetDamage;
     [System.NonSerialized]
+    public UnityEvent onPlayerGetDamage2;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGetDamage3;
+    [System.NonSerialized]
     public UnityEvent onPlayerGainFury;
     [System.NonSerialized]
     public UnityEvent onPlayerGainHealth;
@@ -89,6 +93,8 @@ public class GameManagerSO : ScriptableObject
         onPlayerAttack ??= new UnityEvent();
         OnPlayerBlock ??= new UnityEvent();
         onPlayerGetDamage ??= new UnityEvent();
+        onPlayerGetDamage2 ??= new UnityEvent();
+        onPlayerGetDamage3 ??= new UnityEvent();
         onDiscardCard ??= new UnityEvent();
         onPlayerGainBlock ??= new UnityEvent();
         onPlayerGainFury ??= new UnityEvent();
@@ -291,6 +297,16 @@ public class GameManagerSO : ScriptableObject
     public void PlayerGetDamage()
     {
         onPlayerGetDamage.Invoke();
+    }
+
+    public void PlayerGetDamage2()
+    {
+        onPlayerGetDamage2.Invoke();
+    }
+
+    public void PlayerGetDamage3()
+    {
+        onPlayerGetDamage3.Invoke();
     }
 
     public void PlayerAttack()

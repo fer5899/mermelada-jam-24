@@ -207,6 +207,7 @@ public class TableController : Singleton<TableController>
                     StartCoroutine(FeedbackDamaged());
                     break;
                 case CardAction.ActionType.heal:
+                    gameManager.PlayerHealth();
                     Heal(action);
                     break;
                 case CardAction.ActionType.block:
@@ -322,9 +323,6 @@ public class TableController : Singleton<TableController>
                 case "PlayerThorns":
                       gameManager.PlayerGainThorns();
                       break;
-                case "PlayerHealth":
-                    gameManager.PlayerHealth();
-                    break;
                 case "BossBleed":
                     gameManager.BossGainBleed();
                     break;

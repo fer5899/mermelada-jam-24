@@ -30,4 +30,4 @@ MonoBehaviour:
       variable: {fileID: 0}
       multiplier: 0
     newCardsCostZero: 0
-    targetStatus: {fileID: 0}
+    targetStatus: {fileID: 11400000, guid: 4187a934e83c2ba44a48a232ddb3e353, type: 2}

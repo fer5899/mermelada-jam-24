@@ -36,6 +36,8 @@ public class AudioManager : MonoBehaviour
         gameManager.OnUpgradeStart.AddListener(MenuTheme);
         gameManager.onPlayerAttack.AddListener(BossAttack);
         gameManager.onPlayerGetDamage.AddListener(PlayerGetDamage);
+        gameManager.onPlayerGetDamage2.AddListener(PlayerGetDamage2);
+        gameManager.onPlayerGetDamage3.AddListener(PlayerGetDamage3);
         gameManager.onDiscardCard.AddListener(discardCard);
         gameManager.onPlayerGainBlock.AddListener(gainBlock);
         gameManager.onPlayerGainFury.AddListener(gainFury);
@@ -57,6 +59,8 @@ public class AudioManager : MonoBehaviour
         gameManager.OnUpgradeStart.RemoveListener(MenuTheme);
         gameManager.onPlayerAttack.RemoveListener(BossAttack);
         gameManager.onPlayerGetDamage.RemoveListener(PlayerGetDamage);
+        gameManager.onPlayerGetDamage2.RemoveListener(PlayerGetDamage2);
+        gameManager.onPlayerGetDamage3.RemoveListener(PlayerGetDamage3);
         gameManager.onDiscardCard.RemoveListener(discardCard);
         gameManager.onPlayerGainBlock.RemoveListener(gainBlock);
         gameManager.onPlayerGainFury.RemoveListener(gainFury);
@@ -95,7 +99,6 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound(2);
     }
-
     
     public void discardCard()
     {
@@ -151,6 +154,15 @@ public class AudioManager : MonoBehaviour
         PlaySound(13);
     }
 
+    public void PlayerGetDamage2()
+    {
+        PlaySound(14);
+    }
+
+    public void PlayerGetDamage3()
+    {
+        PlaySound(15);
+    }
 
     public void SetVolume(float volume)
     {

@@ -44,7 +44,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void TakeDamage(int damage)
     {
-        gameManager.PlayerGetDamage();
+        
         playerHealth.AddAmount(-damage);
         if (playerHealth.Value <= 0)
         {

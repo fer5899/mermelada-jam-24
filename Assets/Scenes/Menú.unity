@@ -835,7 +835,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8198726276a351c4a96c40e54b506941, type: 3}
   sounds:
   - {fileID: 8300000, guid: c1a3aa6a074d5e0409e13160fb89e9fe, type: 3}
-  - {fileID: 8300000, guid: 21c4a490b24ba2045bc815f7626a40ef, type: 3}
+  - {fileID: 8300000, guid: be9531f0f656bc44fabe68ea00c5ccf5, type: 3}
   - {fileID: 8300000, guid: e23b26762d3c56c4fa7c0606f096bbd0, type: 3}
   - {fileID: 8300000, guid: 1fce1b0686b785844b8c2bbcbdb98219, type: 3}
   - {fileID: 8300000, guid: 419d97a0732b26d4c804b0b0b34698cf, type: 3}
@@ -848,6 +848,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d0bf5e09f93e4ab45afdb7215e32e47b, type: 3}
   - {fileID: 8300000, guid: d7327c3f52545674fae5640e0bb6b191, type: 3}
   - {fileID: 8300000, guid: d7327c3f52545674fae5640e0bb6b191, type: 3}
+  - {fileID: 8300000, guid: d7327c3f52545674fae5640e0bb6b191, type: 3}
+  - {fileID: 8300000, guid: 1c1f66045120d80468e0f25deeccdc65, type: 3}
   audioSource: {fileID: 92166347}
   soundSource: {fileID: 46452967}
 --- !u!1 &882381599

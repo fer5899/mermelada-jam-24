@@ -172,6 +172,7 @@ public class BossController : Singleton<BossController>
         {
             TakeDamage(PlayerController.Instance.playerThornsStatusCounter.Value);
         }
+        gameManager.PlayerGetDamage();
 
     }
 
@@ -202,6 +203,7 @@ public class BossController : Singleton<BossController>
         gameManager.BossAttack("El Profundo usó Garra Umbría\n(16 de daño)");
         DealDamage(16);
         cameraShake.ShakeCamera(0.5f, 1f);
+        gameManager.PlayerGetDamage();
     }
 
     public void Embestida()
@@ -210,6 +212,7 @@ public class BossController : Singleton<BossController>
         DealDamage(10);
         PlayerController.Instance.GainWeak(2);
         cameraShake.ShakeCamera(0.3f, 0.5f);
+        gameManager.PlayerGetDamage();
     }
 
     public void Reposo()
@@ -223,6 +226,7 @@ public class BossController : Singleton<BossController>
         DealDamage(6);
         PlayerController.Instance.GainLoseManaStatus(1);
         cameraShake.ShakeCamera(0.1f, 0.3f);
+        gameManager.PlayerGetDamage();
     }
 
     public void Carga()
@@ -235,6 +239,7 @@ public class BossController : Singleton<BossController>
         gameManager.BossAttack("El Profundo usó Rayo Oscuro\n(25 de daño)");
         DealDamage(25);
         cameraShake.ShakeCamera(0.5f, 1f);
+        gameManager.PlayerGetDamage();
     }
 
     public void GritoAterrador()
@@ -256,6 +261,7 @@ public class BossController : Singleton<BossController>
         gameManager.BossAttack("El Profundo usó Requiem\n(10000 de daño)");
         DealDamage(10000);
         cameraShake.ShakeCamera(1f, 5f);
+        gameManager.PlayerGetDamage();
     }
 
     private IEnumerator FeedbackDamaged()
