@@ -31,7 +31,7 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
-  - actionType: 0
+  - actionType: 1
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
-  - actionType: 1
+  - actionType: 0
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1

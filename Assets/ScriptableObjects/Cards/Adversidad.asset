@@ -31,20 +31,6 @@ MonoBehaviour:
       variable: {fileID: 0}
       multiplier: 0
     newCardsCostZero: 0
-    targetStatus: {fileID: 11400000, guid: 3b9c8b9e410f3e54ba8cebb601fd4e9e, type: 2}
-  - actionType: 6
-    executeIfStatusActive: {fileID: 0}
-    amount:
-      useConstant: 1
-      constantValue: 1
-      variable: {fileID: 0}
-      multiplier: 0
-    repetition:
-      useConstant: 0
-      constantValue: 0
-      variable: {fileID: 0}
-      multiplier: 0
-    newCardsCostZero: 0
     targetStatus: {fileID: 11400000, guid: e88b000aba533a34eae6e304d1118b73, type: 2}
   - actionType: 6
     executeIfStatusActive: {fileID: 11400000, guid: 3a186497c351c7f4e8b00858be8c116e, type: 2}
@@ -60,3 +46,17 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}
+  - actionType: 6
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 1
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 11400000, guid: 3b9c8b9e410f3e54ba8cebb601fd4e9e, type: 2}

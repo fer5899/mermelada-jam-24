@@ -322,16 +322,20 @@ public class TableController : Singleton<TableController>
                 case "PlayerThorns":
                       gameManager.PlayerGainThorns();
                       break;
-                    // case "PlayerWeak":
-                    //     gameManager.PlayerGainWeak();
-                    //     break;
-                    // case "BossBleed":
-                    //     gameManager.BossGainBleed();
-                    //     break;
+                case "PlayerHealth":
+                    gameManager.PlayerHealth();
+                    break;
+                case "BossBleed":
+                    gameManager.BossGainBleed();
+                    break;
+                case "PlayerWeak":
+                    gameManager.PlayerGainWeak();
+                    break;
+                case "BossWeak":
+                    gameManager.BossGainWeak();
+                    break;
 
-                    // case "BossWeak":
-                    //     gameManager.BossGainWeak();
-                    //     break;
+
 
             }
         }

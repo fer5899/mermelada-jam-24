@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "LluviaT\xF3xica"
   m_EditorClassIdentifier: 
   cardName: "Lluvia t\xF3xica"
-  cardDescription: Aplica 2 de veneno. Repite tantas veces como PS tengas.
+  cardDescription: Aplica 1 de veneno. Repite tantas veces como PS tengas.
   cardImage: {fileID: 21300000, guid: 69b65c46a1a6d064cb0b7fd6af1657dd, type: 3}
   cost: 3
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 2
+      constantValue: 1
       variable: {fileID: 0}
       multiplier: 0
     repetition:

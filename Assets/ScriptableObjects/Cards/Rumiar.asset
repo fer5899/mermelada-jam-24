@@ -17,20 +17,6 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 8f7773ad671e53d4798f74ed216b3063, type: 3}
   cost: 1
   cardActions:
-  - actionType: 2
-    executeIfStatusActive: {fileID: 0}
-    amount:
-      useConstant: 1
-      constantValue: 6
-      variable: {fileID: 0}
-      multiplier: 0
-    repetition:
-      useConstant: 0
-      constantValue: 0
-      variable: {fileID: 0}
-      multiplier: 0
-    newCardsCostZero: 0
-    targetStatus: {fileID: 0}
   - actionType: 6
     executeIfStatusActive: {fileID: 0}
     amount:
@@ -45,3 +31,17 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 11400000, guid: 799f689a7f581c448895e2a62bded8ee, type: 2}
+  - actionType: 2
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 6
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 0}

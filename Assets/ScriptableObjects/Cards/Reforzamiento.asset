@@ -17,11 +17,11 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 54738dc4f765ea942a152ecbc9c337c0, type: 3}
   cost: 1
   cardActions:
-  - actionType: 2
+  - actionType: 1
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 1
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -31,11 +31,11 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
-  - actionType: 1
+  - actionType: 2
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 1
+      constantValue: 5
       variable: {fileID: 0}
       multiplier: 0
     repetition:

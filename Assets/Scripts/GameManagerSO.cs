@@ -44,11 +44,19 @@ public class GameManagerSO : ScriptableObject
     [System.NonSerialized]
     public UnityEvent OnBossPoison;
     [System.NonSerialized]
+    public UnityEvent OnBossBleed;
+    [System.NonSerialized]
+    public UnityEvent OnBossWeak;
+    [System.NonSerialized]
     public UnityEvent OnPlayerBlock;
     [System.NonSerialized]
     public UnityEvent onPlayerGetDamage;
     [System.NonSerialized]
     public UnityEvent onPlayerGainFury;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGainHealth;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGainWeak;
     [System.NonSerialized]
     public UnityEvent onPlayerGainThorns;
     [System.NonSerialized]
@@ -84,11 +92,15 @@ public class GameManagerSO : ScriptableObject
         onDiscardCard ??= new UnityEvent();
         onPlayerGainBlock ??= new UnityEvent();
         onPlayerGainFury ??= new UnityEvent();
+        onPlayerGainHealth ??= new UnityEvent();
         onPlayerGainThorns ??= new UnityEvent();
         onPlayerGainMana ??= new UnityEvent();
+        onPlayerGainWeak ??= new UnityEvent();
         onSelectCard ??= new UnityEvent();
         onButtonSelect ??= new UnityEvent();
         OnBossPoison ??= new UnityEvent();
+        OnBossBleed ??= new UnityEvent();
+        OnBossWeak ??= new UnityEvent();
 
         // Copy all the default cards to the player deck
         playerDeck = new CardSO[defaultPlayerDeck.Length];
@@ -128,6 +140,11 @@ public class GameManagerSO : ScriptableObject
         onPlayerGainFury.Invoke();
     }
 
+    public void PlayerHealth()
+    {
+        onPlayerGainHealth.Invoke();
+    }
+
     public void PlayerGainThorns()
     {
         onPlayerGainThorns.Invoke();
@@ -138,9 +155,24 @@ public class GameManagerSO : ScriptableObject
         onPlayerGainMana.Invoke();
     }
 
+    public void PlayerGainWeak()
+    {
+        onPlayerGainWeak.Invoke();
+    }
+
     public void BossPoison()
     {
         OnBossPoison.Invoke();
+    }
+
+    public void BossGainBleed()
+    {
+        OnBossBleed.Invoke();
+    }
+
+    public void BossGainWeak()
+    {
+        OnBossWeak.Invoke();
     }
 
     public void DiscardCard()

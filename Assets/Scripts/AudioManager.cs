@@ -39,11 +39,15 @@ public class AudioManager : MonoBehaviour
         gameManager.onDiscardCard.AddListener(discardCard);
         gameManager.onPlayerGainBlock.AddListener(gainBlock);
         gameManager.onPlayerGainFury.AddListener(gainFury);
+        gameManager.onPlayerGainHealth.AddListener(gainHealth);
         gameManager.onPlayerGainThorns.AddListener(gainThorns);
+        gameManager.onPlayerGainWeak.AddListener(gainWeak);
         gameManager.onSelectCard.AddListener(selectCard);
         gameManager.onButtonSelect.AddListener(selectButton);
         gameManager.onPlayerGainMana.AddListener(gainMana);
         gameManager.OnBossPoison.AddListener(gainPoison);
+        gameManager.OnBossBleed.AddListener(gainBleed);
+        gameManager.OnBossWeak.AddListener(gainBWeak);
 
     }
 
@@ -56,11 +60,15 @@ public class AudioManager : MonoBehaviour
         gameManager.onDiscardCard.RemoveListener(discardCard);
         gameManager.onPlayerGainBlock.RemoveListener(gainBlock);
         gameManager.onPlayerGainFury.RemoveListener(gainFury);
+        gameManager.onPlayerGainHealth.RemoveListener(gainHealth);
         gameManager.onPlayerGainThorns.RemoveListener(gainThorns);
+        gameManager.onPlayerGainWeak.RemoveListener(gainWeak);
+        gameManager.OnBossWeak.RemoveListener(gainBWeak);
         gameManager.onSelectCard.RemoveListener(selectCard);
         gameManager.onButtonSelect.RemoveListener(selectButton);
         gameManager.onPlayerGainMana.RemoveListener(gainMana);
         gameManager.OnBossPoison.RemoveListener(gainPoison);
+        gameManager.OnBossBleed.RemoveListener(gainBleed);
     }
 
     public void BattleTheme(int num)
@@ -121,6 +129,26 @@ public class AudioManager : MonoBehaviour
     public void gainThorns()
     {
         PlaySound(9);
+    }
+
+    public void gainHealth()
+    {
+        PlaySound(10);
+    }
+
+    public void gainBleed()
+    {
+        PlaySound(11);
+    }
+
+    public void gainWeak()
+    {
+        PlaySound(12);
+    }
+
+    public void gainBWeak()
+    {
+        PlaySound(13);
     }
 
 
