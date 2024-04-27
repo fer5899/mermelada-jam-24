@@ -39,8 +39,12 @@ public class AudioManager : MonoBehaviour
         gameManager.onDiscardCard.AddListener(discardCard);
         gameManager.onPlayerGainBlock.AddListener(gainBlock);
         gameManager.onPlayerGainFury.AddListener(gainFury);
+        gameManager.onPlayerGainThorns.AddListener(gainThorns);
         gameManager.onSelectCard.AddListener(selectCard);
         gameManager.onButtonSelect.AddListener(selectButton);
+        gameManager.onPlayerGainMana.AddListener(gainMana);
+        gameManager.OnBossPoison.AddListener(gainPoison);
+
     }
 
     public void OnDisable()
@@ -52,8 +56,11 @@ public class AudioManager : MonoBehaviour
         gameManager.onDiscardCard.RemoveListener(discardCard);
         gameManager.onPlayerGainBlock.RemoveListener(gainBlock);
         gameManager.onPlayerGainFury.RemoveListener(gainFury);
+        gameManager.onPlayerGainThorns.RemoveListener(gainThorns);
         gameManager.onSelectCard.RemoveListener(selectCard);
         gameManager.onButtonSelect.RemoveListener(selectButton);
+        gameManager.onPlayerGainMana.RemoveListener(gainMana);
+        gameManager.OnBossPoison.RemoveListener(gainPoison);
     }
 
     public void BattleTheme(int num)
@@ -81,6 +88,7 @@ public class AudioManager : MonoBehaviour
         PlaySound(2);
     }
 
+    
     public void discardCard()
     {
         PlaySound(3);
@@ -98,6 +106,21 @@ public class AudioManager : MonoBehaviour
     public void selectButton()
     {
         PlaySound(6);
+    }
+
+    public void gainMana()
+    {
+        PlaySound(7);
+    }
+
+    public void gainPoison()
+    {
+        PlaySound(8);
+    }
+
+    public void gainThorns()
+    {
+        PlaySound(9);
     }
 
 

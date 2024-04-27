@@ -42,11 +42,17 @@ public class GameManagerSO : ScriptableObject
     [System.NonSerialized]
     public UnityEvent<string> onBossAttack;
     [System.NonSerialized]
+    public UnityEvent OnBossPoison;
+    [System.NonSerialized]
     public UnityEvent OnPlayerBlock;
     [System.NonSerialized]
     public UnityEvent onPlayerGetDamage;
     [System.NonSerialized]
     public UnityEvent onPlayerGainFury;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGainThorns;
+    [System.NonSerialized]
+    public UnityEvent onPlayerGainMana;
     [System.NonSerialized]
     public UnityEvent onDiscardCard;
     [System.NonSerialized]
@@ -78,8 +84,12 @@ public class GameManagerSO : ScriptableObject
         onDiscardCard ??= new UnityEvent();
         onPlayerGainBlock ??= new UnityEvent();
         onPlayerGainFury ??= new UnityEvent();
+        onPlayerGainThorns ??= new UnityEvent();
+        onPlayerGainMana ??= new UnityEvent();
         onSelectCard ??= new UnityEvent();
         onButtonSelect ??= new UnityEvent();
+        OnBossPoison ??= new UnityEvent();
+
         // Copy all the default cards to the player deck
         playerDeck = new CardSO[defaultPlayerDeck.Length];
         for (int i = 0; i < defaultPlayerDeck.Length; i++)
@@ -116,6 +126,21 @@ public class GameManagerSO : ScriptableObject
     public void PlayerGainFury()
     {
         onPlayerGainFury.Invoke();
+    }
+
+    public void PlayerGainThorns()
+    {
+        onPlayerGainThorns.Invoke();
+    }
+
+    public void PlayerGainMana()
+    {
+        onPlayerGainMana.Invoke();
+    }
+
+    public void BossPoison()
+    {
+        OnBossPoison.Invoke();
     }
 
     public void DiscardCard()
