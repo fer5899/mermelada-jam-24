@@ -146,9 +146,9 @@ public class TableController : Singleton<TableController>
         CanvasGroup canvasGroup = card.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
             canvasGroup = card.AddComponent<CanvasGroup>();
-        StartCoroutine(FadeOut(canvasGroup));
-        StartCoroutine(DeactivateCardAfterFadeOut(card, canvasGroup));
-       //card.SetActive(false);
+        //StartCoroutine(FadeOut(canvasGroup));
+        //StartCoroutine(DeactivateCardAfterFadeOut(card, canvasGroup));
+       card.SetActive(false);
     }
 
     public void DiscardRandomCard()
