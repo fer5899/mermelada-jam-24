@@ -6197,6 +6197,7 @@ MonoBehaviour:
   drawPileSize: {fileID: 11400000, guid: 83d21b71ff4ca3a48a2bd2af2aa41aac, type: 2}
   playerImg: {fileID: 843343131}
   speed: 1.5
+  playerAnim: {fileID: 843343130}
 --- !u!4 &1715668591
 Transform:
   m_ObjectHideFlags: 0
@@ -8762,6 +8763,7 @@ MonoBehaviour:
   bossPoisonStatusCounter: {fileID: 11400000, guid: 79fa11326dcee0e49bfb8c2e0668ebae, type: 2}
   cameraShake: {fileID: 0}
   bossImg: {fileID: 1671487812}
+  playerTransform: {fileID: 843343132}
   bossAttacks: 0000000001000000020000000000000003000000060000000000000003000000020000000700000000000000010000000600000004000000050000000400000008000000
 --- !u!4 &2118607245
 Transform:

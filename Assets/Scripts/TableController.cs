@@ -194,6 +194,8 @@ public class TableController : Singleton<TableController>
         Debug.Log("Card played: " + cardData.cardName);
     }
 
+    public Animator playerAnim;
+
     public void ExecuteCardActions(CardSO cardData)
     {
         foreach (CardAction action in cardData.cardActions)
@@ -203,6 +205,7 @@ public class TableController : Singleton<TableController>
             switch (action.actionType)
             {
                 case CardAction.ActionType.damage:
+                    playerAnim.SetTrigger("AttackTrigger");
                     DealDamage(action);
                     StartCoroutine(FeedbackDamaged());
                     break;
@@ -380,6 +383,7 @@ public class TableController : Singleton<TableController>
         playerImg.transform.position = initPos;
     }
 
+    //Not working
     private IEnumerator FadeOut(CanvasGroup canvasGroup)
     {
         Debug.Log("FadeOut-------------------");
