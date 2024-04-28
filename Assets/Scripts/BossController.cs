@@ -200,10 +200,11 @@ public class BossController : Singleton<BossController>
 
     public void GarraUmbria()
     {
+        gameManager.PlayerGetDamage();
         gameManager.BossAttack("El Profundo usó Garra Umbría\n(16 de daño)");
         DealDamage(16);
         cameraShake.ShakeCamera(0.5f, 1f);
-        gameManager.PlayerGetDamage();
+        
     }
 
     public void Embestida()
