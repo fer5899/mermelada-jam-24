@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cuchillas
   m_EditorClassIdentifier: 
   cardName: Cuchillas
-  cardDescription: "Haz 1 punto de da\xF1o por cada veneno."
+  cardDescription: "Haz 1 punto de da\xF1o por cada venen aplicado."
   cardImage: {fileID: 21300000, guid: 3889a4b99e1c2614da95df15bc3b0fa5, type: 3}
   cost: 1
   cardActions:

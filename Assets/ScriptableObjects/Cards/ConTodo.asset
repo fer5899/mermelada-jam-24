@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ConTodo
   m_EditorClassIdentifier: 
   cardName: Con todo
-  cardDescription: "Haz 15 de da\xF1o. Descarta una carta al azar. "
+  cardDescription: "Gana 1 de furia. Haz 16 de da\xF1o. Descarta una carta al azar. "
   cardImage: {fileID: 21300000, guid: a5d8c3221db66764898abf8c3bc44a7a, type: 3}
   cost: 2
   cardActions:
@@ -31,11 +31,25 @@ MonoBehaviour:
       multiplier: 0
     newCardsCostZero: 0
     targetStatus: {fileID: 0}
+  - actionType: 6
+    executeIfStatusActive: {fileID: 0}
+    amount:
+      useConstant: 1
+      constantValue: 1
+      variable: {fileID: 0}
+      multiplier: 0
+    repetition:
+      useConstant: 0
+      constantValue: 0
+      variable: {fileID: 0}
+      multiplier: 0
+    newCardsCostZero: 0
+    targetStatus: {fileID: 11400000, guid: 799f689a7f581c448895e2a62bded8ee, type: 2}
   - actionType: 0
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 15
+      constantValue: 16
       variable: {fileID: 0}
       multiplier: 0
     repetition:

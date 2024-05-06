@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Absorber
   m_EditorClassIdentifier: 
   cardName: Absorber
-  cardDescription: "Haz 8 de da\xF1o. Recupera 2 PS."
+  cardDescription: "Haz 7 de da\xF1o. Recupera 2 PS."
   cardImage: {fileID: 21300000, guid: b250bc7cfe32ab74e9cb84a5c5736054, type: 3}
   cost: 1
   cardActions:
@@ -35,7 +35,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 8
+      constantValue: 7
       variable: {fileID: 0}
       multiplier: 0
     repetition:

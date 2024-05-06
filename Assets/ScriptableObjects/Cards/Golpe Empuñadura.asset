@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Golpe Empu\xF1adura"
   m_EditorClassIdentifier: 
   cardName: "Golpe empu\xF1adura"
-  cardDescription: "Haz 4 de da\xF1o. Aplica 1 de debilidad."
+  cardDescription: "Haz 5 de da\xF1o. Aplica 1 de debilidad."
   cardImage: {fileID: 21300000, guid: 9c07eed6726b5094bb9e44859d5c33fe, type: 3}
   cost: 1
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 4
+      constantValue: 5
       variable: {fileID: 0}
       multiplier: 0
     repetition:

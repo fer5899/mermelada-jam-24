@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArbolCaido
   m_EditorClassIdentifier: 
   cardName: "\xC1rbol ca\xEDdo"
-  cardDescription: "Haz 20 de da\xF1o. 40 si el rival est\xE1 debilitado."
+  cardDescription: "Haz 24 de da\xF1o. 48 si el rival est\xE1 debilitado."
   cardImage: {fileID: 21300000, guid: 639792b95c551fb4e9d7fb1618d23a6a, type: 3}
   cost: 3
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 20
+      constantValue: 24
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -35,7 +35,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 11400000, guid: 3b9c8b9e410f3e54ba8cebb601fd4e9e, type: 2}
     amount:
       useConstant: 1
-      constantValue: 20
+      constantValue: 24
       variable: {fileID: 0}
       multiplier: 0
     repetition:

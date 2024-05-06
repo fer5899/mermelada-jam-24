@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ovillo
   m_EditorClassIdentifier: 
   cardName: Ovillo
-  cardDescription: "Bloquea 5 de da\xF1o. Si est\xE1s debilitado, bloquea 10."
+  cardDescription: "Bloquea 6 de da\xF1o. Si est\xE1s debilitado, bloquea 10."
   cardImage: {fileID: 21300000, guid: bcf04aeccfbabcf478aace6fcf7f94bc, type: 3}
   cost: 1
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 6
       variable: {fileID: 0}
       multiplier: 0
     repetition:
@@ -35,7 +35,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 11400000, guid: 3a186497c351c7f4e8b00858be8c116e, type: 2}
     amount:
       useConstant: 1
-      constantValue: 5
+      constantValue: 4
       variable: {fileID: 0}
       multiplier: 0
     repetition:

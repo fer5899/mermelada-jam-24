@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Inercia
   cardDescription: "Haz 4 de da\xF1o. Repite tantas veces como furia poseas."
   cardImage: {fileID: 21300000, guid: 73b7067acb63aa94c9c33bbcce81fe52, type: 3}
-  cost: 1
+  cost: 0
   cardActions:
   - actionType: 0
     executeIfStatusActive: {fileID: 0}

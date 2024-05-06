@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ataque 1
   m_EditorClassIdentifier: 
   cardName: Ataque
-  cardDescription: "Haz 6 de da\xF1o."
+  cardDescription: "Haz 7 de da\xF1o."
   cardImage: {fileID: 21300000, guid: b0c2dbdd50b5cfe499db949af9e62b69, type: 3}
   cost: 1
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 6
+      constantValue: 7
       variable: {fileID: 0}
       multiplier: 0
     repetition:

@@ -17,7 +17,7 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 6ac5c517138021c409d0cff909996576, type: 3}
   cost: 0
   cardActions:
-  - actionType: 0
+  - actionType: 6
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1

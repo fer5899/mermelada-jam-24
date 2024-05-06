@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Estocada
   m_EditorClassIdentifier: 
   cardName: Estocada
-  cardDescription: "Haz 4 de da\xF1o. Aplica 2 de sangrado."
+  cardDescription: "Haz 5 de da\xF1o. Aplica 2 de sangrado."
   cardImage: {fileID: 21300000, guid: a715b4d574a6e59458b11a16eae86f95, type: 3}
   cost: 1
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 4
+      constantValue: 5
       variable: {fileID: 0}
       multiplier: 0
     repetition:

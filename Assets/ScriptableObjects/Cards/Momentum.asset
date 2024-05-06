@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Momentum
   m_EditorClassIdentifier: 
   cardName: Momentum
-  cardDescription: "Haz 6 de da\xF1o. Si tienes furia, roba 1 carta."
+  cardDescription: "Haz 8 de da\xF1o. Si tienes furia, roba 1 carta."
   cardImage: {fileID: 21300000, guid: df5684f11212c764ea60693a053978c0, type: 3}
   cost: 1
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 6
+      constantValue: 8
       variable: {fileID: 0}
       multiplier: 0
     repetition:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MuroRoca
   m_EditorClassIdentifier: 
   cardName: Muro roca
-  cardDescription: "Bloquea 10 de da\xF1o. "
+  cardDescription: "Bloquea 8 de da\xF1o. "
   cardImage: {fileID: 21300000, guid: 330f0d8abaa4d5f4dbb19531e1bc2e49, type: 3}
   cost: 1
   cardActions:
