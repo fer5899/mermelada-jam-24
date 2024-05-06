@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Golpe Contundente
   m_EditorClassIdentifier: 
   cardName: Golpe contundente
-  cardDescription: "Haz 6 de da\xF1o. 12 si el rival est\xE1 debilitado."
+  cardDescription: "Haz 7 de da\xF1o. 12 si el rival est\xE1 debilitado."
   cardImage: {fileID: 21300000, guid: 3e33649f3b2026241bea5c0f74eeed5b, type: 3}
   cost: 1
   cardActions:
@@ -21,7 +21,7 @@ MonoBehaviour:
     executeIfStatusActive: {fileID: 0}
     amount:
       useConstant: 1
-      constantValue: 6
+      constantValue: 7
       variable: {fileID: 0}
       multiplier: 0
     repetition:
