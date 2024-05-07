@@ -179,20 +179,35 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(int theme)
     {
         audioSource.clip = musicThemes[theme];
+        audioSource.volume = 0.19f; // Establece el volumen de la música
         audioSource.Play();
         audioSource.loop = true;
-        double volumeValue = 0.16; // Define volumeValue as double
-        float floatValue = (float)volumeValue;
-        SetVolume(floatValue);
     }
 
     public void PlaySound(int sound)
-    {
+    {   
         soundSource.clip = sounds[sound];
+        soundSource.volume = 0.5f; // Establece el volumen del efecto de sonido
         soundSource.Play();
         soundSource.loop = false;
-        // double volumeValue = 0.16; // Define volumeValue as double
-        // float floatValue = (float)volumeValue;
-        // SetVolume(floatValue);
     }
+    // public void PlayMusic(int theme)
+    // {
+    //     audioSource.clip = musicThemes[theme];
+    //     audioSource.Play();
+    //     audioSource.loop = true;
+    //     double volumeValue = 0.19; // Define volumeValue as double
+    //     float floatValue = (float)volumeValue;
+    //     SetVolume(floatValue);
+    // }
+
+    // public void PlaySound(int sound)
+    // {
+    //     soundSource.clip = sounds[sound];
+    //     soundSource.Play();
+    //     soundSource.loop = false;
+    //     double volumeValue = 0.5; // Define volumeValue as double
+    //     float floatValue = (float)volumeValue;
+    //     SetVolume(floatValue);
+    // }
 }
