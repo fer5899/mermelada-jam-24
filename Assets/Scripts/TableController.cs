@@ -264,7 +264,7 @@ public class TableController : Singleton<TableController>
         {
             bossTakenDamage = playerDamageOutput * 1.2f; // Bleed multiplier
         }
-
+        gameManager.PlayerAttack();
         BossController.Instance.TakeDamage((int)Mathf.Ceil(bossTakenDamage));
 
         // Repeat damage dealing as many times as repetition value
@@ -335,9 +335,6 @@ public class TableController : Singleton<TableController>
                 case "BossWeak":
                     gameManager.BossGainWeak();
                     break;
-
-
-
             }
         }
 

@@ -191,8 +191,8 @@ public class AudioManager : MonoBehaviour
         soundSource.clip = sounds[sound];
         soundSource.Play();
         soundSource.loop = false;
-        //double volumeValue = 0.16; // Define volumeValue as double
-        //float floatValue = (float)volumeValue;
-        //SetVolume(floatValue);
+        // double volumeValue = 0.16; // Define volumeValue as double
+        // float floatValue = (float)volumeValue;
+        // SetVolume(floatValue);
     }
 }
