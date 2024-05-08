@@ -112,6 +112,7 @@ public class TableController : Singleton<TableController>
         //DebugList(drawPile);
         discardPile.Clear();
     }
+
     void ShuffleDeck(List<CardSO> list)
     {
         int n = list.Count;
@@ -135,6 +136,7 @@ public class TableController : Singleton<TableController>
             Debug.Log("list[" + i + "]: " + list[i].cardName);
         Debug.Log("----------------------");
     }
+    
     public void AddToDiscardPile(CardSO card)
     {
         discardPile.Add(card);
@@ -321,11 +323,11 @@ public class TableController : Singleton<TableController>
                     gameManager.PlayerGainMana();
                     break;
                 case "BossPoison":
-                     gameManager.BossPoison();
-                     break;
+                    gameManager.BossPoison();
+                    break;
                 case "PlayerThorns":
-                      gameManager.PlayerGainThorns();
-                      break;
+                    gameManager.PlayerGainThorns();
+                    break;
                 case "BossBleed":
                     gameManager.BossGainBleed();
                     break;
