@@ -185,7 +185,7 @@ public class TableController : Singleton<TableController>
     public void PlayInTable(GameObject card, bool costsZero = false)
     {
         CardSO cardData = card.GetComponent<CardController>().cardData;
-        if (PlayerController.Instance.playerMana.Value < cardData.cost)
+        if (PlayerController.Instance.playerMana.Value < cardData.cost && !costsZero)
             return;
 
 
